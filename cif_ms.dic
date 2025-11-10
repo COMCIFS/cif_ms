@@ -6394,7 +6394,7 @@ save_ATOM_SITE_ROT_FOURIER_PARAM
         loop_
          _cell_wave_vector.seq_id
          _cell_wave_vector.xyz
-          1  [0,0.780(3),0]
+          1  [0 0.780(3) 0]
 
         # - - - - data truncated for brevity - - - -
 
