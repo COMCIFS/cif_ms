@@ -382,21 +382,21 @@ save_ATOM_SITE_ANHARMONIC_ADP
           _atom_site_anharmonic_ADP.atom_site_label
           _atom_site_anharmonic_ADP.tens_elem
           _atom_site_anharmonic_ADP.coeff
-          Sb D1111  0.00057(8)
-          Sb D1112  0
-          Sb D1113  0
-          Sb D1122  0.0072(7)
-          Sb D1123  0
-          Sb D1133  0.008(2)
-          Sb D1222  0
-          Sb D1223  0
-          Sb D1233  0
-          Sb D1333  0
-          Sb D2222  0.98(6)
-          Sb D2223  0
-          Sb D2233 -0.82(9)
-          Sb D2333  0
-          Sb D3333  0.24(12)
+          Sb1 D1111  0.00057(8)
+          Sb1 D1112  0
+          Sb1 D1113  0
+          Sb1 D1122  0.0072(7)
+          Sb1 D1123  0
+          Sb1 D1133  0.008(2)
+          Sb1 D1222  0
+          Sb1 D1223  0
+          Sb1 D1233  0
+          Sb1 D1333  0
+          Sb1 D2222  0.98(6)
+          Sb1 D2223  0
+          Sb1 D2233 -0.82(9)
+          Sb1 D2333  0
+          Sb1 D3333  0.24(12)
 
         # - - - - data truncated for brevity - - - -
 
