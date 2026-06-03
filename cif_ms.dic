@@ -3311,7 +3311,11 @@ save_ATOM_SITE_DISPLACE_SAWTOOTH
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_DISPLACE_SAWTOOTH
-    _category_key.name            '_atom_site_displace_sawtooth.atom_site_label'
+
+    loop_
+      _category_key.name
+         '_atom_site_displace_sawtooth.atom_site_label'
+         '_atom_site_displace_sawtooth.structure_id'
 
     loop_
       _description_example.case
@@ -3398,7 +3402,8 @@ save_atom_site_displace_sawtooth.atom_site_label
     _definition.update            2025-10-20
     _description.text
 ;
-      The code that identifies an atom or rigid group in a loop in which
+      The code, along with _atom_site_displace_sawtooth.structure_id, that
+      identifies an atom or rigid group in a loop in which
       the sawtooth function that describes its displacive modulation is
       being defined. This code must match the _atom_site.label of the
       associated coordinate list and conform to the rules described in
@@ -3639,6 +3644,24 @@ save_atom_site_displace_sawtooth.matrix_seq_id
 
     _import.get
         [{'file':templ_attr.cif  'save':transf_matrix_id}]
+
+save_
+
+save_atom_site_displace_sawtooth.structure_id
+
+    _definition.id                '_atom_site_displace_sawtooth.structure_id'
+    _definition.update            2026-06-03
+    _description.text
+;
+    A code identifying the structure to which this atom site belongs.
+;
+    _name.category_id             atom_site_displace_sawtooth
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
@@ -18819,13 +18842,16 @@ save_
         Changed the _category_key.name  of DIFFRN_REFLN and REFLN to
         _diffrn_refln.id and _refln.id, respectively.
 
-        Added _structure.id keys to ATOM_SITE_ANHARMONIC_ADP
+        Added _structure.id keys to:
+        ATOM_SITE_ANHARMONIC_ADP
+        ATOM_SITE_DISPLACE_SAWTOOTH
 
-        Added _structure.id non-key linked data names to
+        Added _structure.id non-key linked data names to:
         ATOM_SITE_ANHARMONIC_ADP_FOURIER
         ATOM_SITE_ANHARMONIC_ADP_ORTHO
         ATOM_SITE_ANHARMONIC_ADP_XHARM
         ATOM_SITE_DISPLACE_FOURIER
         ATOM_SITE_DISPLACE_LEGENDRE
         ATOM_SITE_DISPLACE_ORTHO
+
 ;
