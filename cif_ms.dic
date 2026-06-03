@@ -5933,7 +5933,8 @@ save_atom_site_occ_ortho.atom_site_label
     _definition.update            2025-10-20
     _description.text
 ;
-      The code that identifies an atom or rigid group in a loop in which
+      The code, along with _atom_site_occ_ortho.structure_id, that
+      identifies an atom or rigid group in a loop in which
       the ortho components of its occupational modulation are listed.
       This code must match the _atom_site.label of the associated coordinate
       list and conform to the rules described in _atom_site.label.
@@ -18982,5 +18983,6 @@ save_
         ATOM_SITE_OCC_FOURIER
         ATOM_SITE_OCC_LEGENDRE
         ATOM_SITE_OCC_ORTHO
+        ATOM_SITE_OCC_XHARM
 
 ;
