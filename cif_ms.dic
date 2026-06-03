@@ -6525,7 +6525,8 @@ save_atom_site_rot_fourier.atom_site_label
     _definition.update            2025-10-20
     _description.text
 ;
-      The code that identifies a rigid group in a loop in which the Fourier
+      The code, along with _atom_site_rot_fourier.structure_id, that
+      identifies a rigid group in a loop in which the Fourier
       components of the rotational part of its displacive modulation
       are listed. The translational part (if any) would appear in a
       separate list (see _atom_site_displace_Fourier.atom_site_label).
@@ -6626,6 +6627,24 @@ save_atom_site_rot_fourier.matrix_seq_id
 
     _import.get
         [{'file':templ_attr.cif  'save':transf_matrix_id}]
+
+save_
+
+save_atom_site_rot_Fourier.structure_id
+
+    _definition.id                '_atom_site_rot_Fourier.structure_id'
+    _definition.update            2026-06-03
+    _description.text
+;
+    A code identifying the structure to which this atom site belongs.
+;
+    _name.category_id             atom_site_rot_Fourier
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
@@ -19027,5 +19046,6 @@ save_
         ATOM_SITE_OCC_LEGENDRE
         ATOM_SITE_OCC_ORTHO
         ATOM_SITE_OCC_XHARM
+        ATOM_SITE_ROT_FOURIER
 
 ;
