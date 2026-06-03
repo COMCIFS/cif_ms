@@ -2741,7 +2741,8 @@ save_atom_site_displace_legendre.atom_site_label
     _definition.update            2025-10-20
     _description.text
 ;
-      The code that identifies an atom or rigid group in a loop in which
+      The code, along with _atom_site_displace_Legendre.structure_id, that
+      identifies an atom or rigid group in a loop in which
       the Legendre components of its displacive modulation are listed.
       This code must match the _atom_site.label of the associated
       coordinate list and conform to the rules described in _atom_site.label.
@@ -2899,6 +2900,24 @@ save_atom_site_displace_legendre.order
     _type.contents                Integer
     _enumeration.range            1:
     _units.code                   none
+
+save_
+
+save_atom_site_displace_legendre.structure_id
+
+    _definition.id                '_atom_site_displace_Legendre.structure_id'
+    _definition.update            2026-06-03
+    _description.text
+;
+    A code identifying the structure to which this atom site belongs.
+;
+    _name.category_id             atom_site_displace_Legendre
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
@@ -18788,4 +18807,5 @@ save_
         ATOM_SITE_ANHARMONIC_ADP_ORTHO
         ATOM_SITE_ANHARMONIC_ADP_XHARM
         ATOM_SITE_DISPLACE_FOURIER
+        ATOM_SITE_DISPLACE_LEGENDRE
 ;
