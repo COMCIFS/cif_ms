@@ -6196,7 +6196,11 @@ save_ATOM_SITE_PHASON
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_PHASON
-    _category_key.name            '_atom_site_phason.atom_site_label'
+
+    loop_
+      _category_key.name
+         '_atom_site_phason.atom_site_label'
+         '_atom_site_phason.structure_id'
 
 save_
 
@@ -6207,7 +6211,8 @@ save_atom_site_phason.atom_site_label
     _definition.update            2025-10-20
     _description.text
 ;
-      The code that identifies an atom or rigid group in a loop in
+      The code, along with _atom_site_phason.structure_id, that
+      identifies an atom or rigid group in a loop in
       which the phason coefficients are listed. Although this kind of
       correction is intended to be overall, some refinement programs
       (for example, JANA) allow an independent phason correction
@@ -6295,6 +6300,24 @@ save_atom_site_phason.formula
       _enumeration_set.detail
          Axe            'Axe, J. D. (1980). Phys. Rev. B, 21, 4181-4190.'
          Ovr            'Overhauser, A. W. (1971). Phys. Rev. B, 3, 3173-3182.'
+
+save_
+
+save_atom_site_phason.structure_id
+
+    _definition.id                '_atom_site_phason.structure_id'
+    _definition.update            2026-06-03
+    _description.text
+;
+    A code identifying the structure to which this atom site belongs.
+;
+    _name.category_id             atom_site_phason
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
@@ -18990,6 +19013,7 @@ save_
         ATOM_SITE_DISPLACE_SAWTOOTH
         ATOM_SITE_DISPLACE_ZIGZAG
         ATOM_SITE_OCC_CRENEL
+        ATOM_SITE_PHASON
 
         Added _structure.id non-key linked data names to:
         ATOM_SITE_ANHARMONIC_ADP_FOURIER
