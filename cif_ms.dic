@@ -1281,7 +1281,8 @@ save_atom_site_anharmonic_adp_legendre.atom_site_label
     _definition.update            2025-10-20
     _description.text
 ;
-      The code the identifies an atom in a loop in which the Legendre
+      The code, along with _atom_site_anharmonic_adp_Legendre.structure_id,
+      that identifies an atom in a loop in which the Legendre
       components of the tensors that parameterize its anharmonic ADP
       modulation are listed. This code must match the _atom_site.label of
       the associated coordinate list and conform to the rules described
@@ -1369,6 +1370,24 @@ save_atom_site_anharmonic_adp_legendre.order
     _type.contents                Integer
     _enumeration.range            0:
     _units.code                   none
+
+save_
+
+save_atom_site_anharmonic_adp_Legendre.structure_id
+
+    _definition.id                '_atom_site_anharmonic_ADP_Legendre.structure_id'
+    _definition.update            2026-06-03
+    _description.text
+;
+    A code identifying the structure to which this atom site belongs.
+;
+    _name.category_id             atom_site_anharmonic_ADP_Legendre
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
