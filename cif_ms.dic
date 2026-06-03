@@ -5037,7 +5037,12 @@ save_ATOM_SITE_OCC_CRENEL
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_OCC_CRENEL
-    _category_key.name            '_atom_site_occ_crenel.atom_site_label'
+
+    loop_
+      _category_key.name
+         '_atom_site_occ_crenel.atom_site_label'
+         '_atom_site_occ_crenel.structure_id'
+
     _description_example.case
 ;
     #\#CIF_2.0
@@ -5100,7 +5105,8 @@ save_atom_site_occ_crenel.atom_site_label
     _definition.update            2025-10-20
     _description.text
 ;
-      The code that identifies an atom or rigid group in a loop in
+      The code, along with _atom_site_occ_crenel.structure_id, that
+      identifies an atom or rigid group in a loop in
       which the parameters of the crenel function that describes its
       occupational modulation are listed. This code must match
       the _atom_site.label of the associated coordinate list and
@@ -5188,6 +5194,24 @@ save_atom_site_occ_crenel.ortho_eps
     _type.contents                Real
     _enumeration.default          0.95
     _units.code                   none
+
+save_
+
+save_atom_site_occ_crenel.structure_id
+
+    _definition.id                '_atom_site_occ_crenel.structure_id'
+    _definition.update            2026-06-03
+    _description.text
+;
+    A code identifying the structure to which this atom site belongs.
+;
+    _name.category_id             atom_site_occ_crenel
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
@@ -18889,6 +18913,7 @@ save_
         ATOM_SITE_ANHARMONIC_ADP
         ATOM_SITE_DISPLACE_SAWTOOTH
         ATOM_SITE_DISPLACE_ZIGZAG
+        ATOM_SITE_OCC_CRENEL
 
         Added _structure.id non-key linked data names to:
         ATOM_SITE_ANHARMONIC_ADP_FOURIER
