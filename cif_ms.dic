@@ -18614,8 +18614,6 @@ save_
 ;
          3.2.5                    2026-06-05
 ;
-        Add new key to REFLN: _refln.structure_id, linked to _structure.id.
-
         _SPECIAL_FUNC categories, replaced by:
         _DISPLACE_SAWTOOTH
         _DISPLACE_ZIGZAG
@@ -18692,4 +18690,7 @@ save_
 
         Changed the _category_key.name  of DIFFRN_REFLN and REFLN to
         _diffrn_refln.id and _refln.id, respectively.
+
+        Add new key to REFLN: _refln.structure_id, linked to _structure.id.
+        Needed to match redefinition in MULTI_BLOCK_CORE.
 ;
