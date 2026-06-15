@@ -860,7 +860,7 @@ save_atom_site_anharmonic_adp_fourier.wave_vector_seq_id
 
     _definition.id
         '_atom_site_anharmonic_ADP_Fourier.wave_vector_seq_id'
-    _definition.update            2025-10-28
+    _definition.update            2026-06-15
     _description.text
 ;
        A numeric code identifying the wave vectors of the Fourier terms
@@ -875,7 +875,7 @@ save_atom_site_anharmonic_adp_fourier.wave_vector_seq_id
     _type.source                  Related
     _type.container               Single
     _type.contents                Integer
-    _enumeration.range            0:
+    _enumeration.range            1:
     _units.code                   none
 
 save_
@@ -2099,7 +2099,7 @@ save_atom_site_displace_fourier.wave_vector_seq_id
         '_atom_site_displace_Fourier.wave_vector_seq_id'
     _alias.definition_id
         '_atom_site_displace_Fourier_wave_vector_seq_id'
-    _definition.update            2025-10-28
+    _definition.update            2026-06-15
     _description.text
 ;
       A numeric code identifying the wave vectors of the Fourier terms
@@ -2116,7 +2116,7 @@ save_atom_site_displace_fourier.wave_vector_seq_id
     _type.source                  Related
     _type.container               Single
     _type.contents                Integer
-    _enumeration.range            0:
+    _enumeration.range            1:
     _units.code                   none
 
 save_
@@ -4633,7 +4633,7 @@ save_atom_site_fourier_wave_vector.seq_id
 
     _definition.id                '_atom_site_Fourier_wave_vector.seq_id'
     _alias.definition_id          '_atom_site_Fourier_wave_vector_seq_id'
-    _definition.update            2025-10-28
+    _definition.update            2026-06-15
     _description.text
 ;
       A numeric code identifying the wave vectors defined in
@@ -4645,7 +4645,7 @@ save_atom_site_fourier_wave_vector.seq_id
     _type.source                  Related
     _type.container               Single
     _type.contents                Integer
-    _enumeration.range            0:
+    _enumeration.range            1:
     _units.code                   none
 
 save_
@@ -5156,7 +5156,7 @@ save_atom_site_occ_fourier.wave_vector_seq_id
 
     _definition.id                '_atom_site_occ_Fourier.wave_vector_seq_id'
     _alias.definition_id          '_atom_site_occ_Fourier_wave_vector_seq_id'
-    _definition.update            2025-10-28
+    _definition.update            2026-06-15
     _description.text
 ;
       A numeric code identifying the wave vectors of the Fourier terms
@@ -5171,7 +5171,7 @@ save_atom_site_occ_fourier.wave_vector_seq_id
     _type.source                  Related
     _type.container               Single
     _type.contents                Integer
-    _enumeration.range            0:
+    _enumeration.range            1:
     _units.code                   none
 
 save_
@@ -6295,7 +6295,7 @@ save_atom_site_rot_fourier.wave_vector_seq_id
 
     _definition.id                '_atom_site_rot_Fourier.wave_vector_seq_id'
     _alias.definition_id          '_atom_site_rot_Fourier_wave_vector_seq_id'
-    _definition.update            2025-10-28
+    _definition.update            2026-06-15
     _description.text
 ;
       A numeric code identifying the wave vectors of the Fourier terms
@@ -6310,7 +6310,7 @@ save_atom_site_rot_fourier.wave_vector_seq_id
     _type.source                  Related
     _type.container               Single
     _type.contents                Integer
-    _enumeration.range            0:
+    _enumeration.range            1:
     _units.code                   none
 
 save_
@@ -8072,7 +8072,7 @@ save_atom_site_u_fourier.wave_vector_seq_id
 
     _definition.id                '_atom_site_U_Fourier.wave_vector_seq_id'
     _alias.definition_id          '_atom_site_U_Fourier_wave_vector_seq_id'
-    _definition.update            2025-10-28
+    _definition.update            2026-06-15
     _description.text
 ;
       A numeric code identifying the wave vectors of the Fourier terms
@@ -8087,7 +8087,7 @@ save_atom_site_u_fourier.wave_vector_seq_id
     _type.source                  Related
     _type.container               Single
     _type.contents                Integer
-    _enumeration.range            0:
+    _enumeration.range            1:
     _units.code                   none
 
 save_
@@ -9832,7 +9832,7 @@ save_
 save_atom_sites_ortho.wave_vector_seq_id_list
 
     _definition.id                '_atom_sites_ortho.wave_vector_seq_id_list'
-    _definition.update            2025-10-28
+    _definition.update            2026-06-15
     _description.text
 ;
       A list of numeric codes that identifies the harmonics chosen for the
@@ -9846,7 +9846,8 @@ save_atom_sites_ortho.wave_vector_seq_id_list
     _type.container               List
     _type.dimension               '[]'
     _type.contents                Integer
-    _enumeration.default          [0]
+    _enumeration.range            1:
+    _enumeration.default          [1]
     _units.code                   none
 
 save_
@@ -18671,10 +18672,13 @@ save_
         Changed the _category_key.name  of DIFFRN_REFLN and REFLN to
         _diffrn_refln.id and _refln.id, respectively.
 
-        2026-06-15
+        2026-06-18
 
         Explicitly deprecated the ATOM_SITES_DISPLACE_FOURIER category.
 
         Changed the content type of _cell.commen_supercell_matrix* data items
         from 'Integer' to 'Real'.
+
+        Restricted the values of _atom_site_Fourier_wave_vector.seq_id and
+        linked data items to positive integers.
 ;
