@@ -15245,7 +15245,7 @@ save_GEOM_ANGLE
     _definition.id                GEOM_ANGLE
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-06-15
     _description.text
 ;
       Data items in the GEOM_ANGLE category record
@@ -15268,6 +15268,7 @@ save_GEOM_ANGLE
          '_geom_angle.atom_site_label_1'
          '_geom_angle.atom_site_label_2'
          '_geom_angle.atom_site_label_3'
+         '_geom_angle.model_id'
          '_geom_angle.site_ssg_symmetry_1'
          '_geom_angle.site_ssg_symmetry_2'
          '_geom_angle.site_ssg_symmetry_3'
@@ -15582,7 +15583,7 @@ save_GEOM_BOND
     _definition.id                GEOM_BOND
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-06-15
     _description.text
 ;
       Data items in the GEOM_BOND category record
@@ -15600,6 +15601,7 @@ save_GEOM_BOND
       _category_key.name
          '_geom_bond.atom_site_label_1'
          '_geom_bond.atom_site_label_2'
+         '_geom_angle.model_id'
          '_geom_bond.site_ssg_symmetry_1'
          '_geom_bond.site_ssg_symmetry_2'
 
@@ -15787,7 +15789,7 @@ save_GEOM_CONTACT
     _definition.id                GEOM_CONTACT
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-06-15
     _description.text
 ;
       The CATEGORY of data items used to specify the interatomic
@@ -15803,6 +15805,7 @@ save_GEOM_CONTACT
       _category_key.name
          '_geom_contact.atom_site_label_1'
          '_geom_contact.atom_site_label_2'
+         '_geom_angle.model_id'
          '_geom_contact.site_ssg_symmetry_1'
          '_geom_contact.site_ssg_symmetry_2'
 
@@ -15951,7 +15954,7 @@ save_GEOM_HBOND
     _definition.id                GEOM_HBOND
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-06-15
     _description.text
 ;
      The CATEGORY of data items used to specify the hydrogen bond
@@ -15969,6 +15972,7 @@ save_GEOM_HBOND
          '_geom_hbond.atom_site_label_D'
          '_geom_hbond.atom_site_label_H'
          '_geom_hbond.atom_site_label_A'
+         '_geom_angle.model_id'
          '_geom_hbond.site_ssg_symmetry_D'
          '_geom_hbond.site_ssg_symmetry_H'
          '_geom_hbond.site_ssg_symmetry_A'
@@ -16487,7 +16491,7 @@ save_GEOM_TORSION
     _definition.id                GEOM_TORSION
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-06-15
     _description.text
 ;
      The CATEGORY of data items used to specify the torsion angles in the
@@ -16506,6 +16510,7 @@ save_GEOM_TORSION
          '_geom_torsion.atom_site_label_2'
          '_geom_torsion.atom_site_label_3'
          '_geom_torsion.atom_site_label_4'
+         '_geom_angle.model_id'
          '_geom_torsion.site_ssg_symmetry_1'
          '_geom_torsion.site_ssg_symmetry_2'
          '_geom_torsion.site_ssg_symmetry_3'
