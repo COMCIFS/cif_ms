@@ -24,7 +24,7 @@ data_CIF_MS
     _dictionary.formalism         Modulated
     _dictionary.class             Instance
     _dictionary.version           3.2.5
-    _dictionary.date              2026-06-07
+    _dictionary.date              2026-06-15
     _dictionary.uri               http://www.iucr.org/cif/dic/cif_ms.dic
     _dictionary.ddl_conformance   4.1.0
     _dictionary.namespace         ModStruct
@@ -18292,6 +18292,24 @@ _twin_refln.index_m_list = temp.index_m_list[0:_cell.modulation_dimension - 1]
 
 save_
 
+save_structure.superspace_group_id
+
+    _definition.id                '_structure.superspace_group_id'
+    _definition.update            2026-06-15
+    _description.text
+;
+    A code which identifies the superspace group describing the structure.
+;
+    _name.category_id             structure
+    _name.object_id               superspace_group_id
+    _name.linked_item_id          '_superspace_group.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
     loop_
       _dictionary_audit.version
       _dictionary_audit.date
@@ -18634,7 +18652,7 @@ save_
         2024-12-12
         Technical fixes (JRH)
 ;
-         3.2.5                    2026-06-07
+         3.2.5                    2026-06-15
 ;
         _SPECIAL_FUNC categories, replaced by:
         _DISPLACE_SAWTOOTH
@@ -18715,4 +18733,6 @@ save_
 
         Added key _superspace_group.id and linked key
         _superspace_group_symop.superspace_group_id
+
+        Added linked non-key _structure.superspace_group_id
 ;
