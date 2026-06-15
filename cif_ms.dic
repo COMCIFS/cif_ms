@@ -1,4 +1,5 @@
 #\#CIF_2.0
+# SPDX-License-Identifier: CC-BY-4.0
 ################################################################################
 #                                                                              #
 #                   CIF Dictionary for Modulated Structures                    #
@@ -27,6 +28,7 @@ data_CIF_MS
     _dictionary.date              2026-05-02
     _dictionary.uri               http://www.iucr.org/cif/dic/cif_ms.dic
     _dictionary.ddl_conformance   4.1.0
+    _dictionary.licensing_SPDX    CC-BY-4.0
     _dictionary.namespace         ModStruct
     _description.text
 ;
