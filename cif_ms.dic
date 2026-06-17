@@ -17943,6 +17943,7 @@ save_SUPERSPACE_GROUP_SYMOP
 
     _space_group.crystal_system              trigonal
     _superspace_group.name                   'R-3m(00\g)0s'
+    _superspace_group.id                     SSG_01
 
     loop_
      _superspace_group_symop.id
