@@ -9883,7 +9883,7 @@ save_atom_sites_ortho.structure_id
     _description.text
 ;
     A code identifying the crystallographic structure associated with the
-    orthogonalized functions for this atom sites description.
+    atom sites.
 ;
     _name.category_id             atom_sites_ortho
     _name.object_id               structure_id
