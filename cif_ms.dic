@@ -9212,7 +9212,7 @@ save_atom_sites_axes.structure_id
     _description.text
 ;
     A code identifying the crystallographic structure associated with the
-    transformation matrices for the atom sites.
+    atom sites.
 ;
     _name.category_id             atom_sites_axes
     _name.object_id               structure_id
@@ -9694,7 +9694,7 @@ save_atom_sites_modulation.structure_id
     _description.text
 ;
     A code identifying the crystallographic structure associated with the
-    modulation of atom sites.
+    atom sites.
 ;
     _name.category_id             atom_sites_modulation
     _name.object_id               structure_id
