@@ -9228,7 +9228,9 @@ save_ATOM_SITES_DISPLACE_FOURIER
     _definition.id                ATOM_SITES_DISPLACE_FOURIER
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2024-08-09
+    _definition_replaced.id       1
+    _definition_replaced.by       .
+    _definition.update            2026-06-15
     _description.text
 ;
       Data items in the ATOM_SITES_DISPLACE_FOURIER category record
@@ -18670,6 +18672,8 @@ save_
         _diffrn_refln.id and _refln.id, respectively.
 
         2026-06-15
+
+        Explicitly deprecated the ATOM_SITES_DISPLACE_FOURIER category.
 
         Changed the content type of _cell.commen_supercell_matrix* data items
         from 'Integer' to 'Real'.
