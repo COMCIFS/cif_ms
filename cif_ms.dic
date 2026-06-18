@@ -25,7 +25,7 @@ data_CIF_MS
     _dictionary.formalism         Modulated
     _dictionary.class             Instance
     _dictionary.version           3.2.5
-    _dictionary.date              2026-06-15
+    _dictionary.date              2026-06-18
     _dictionary.uri               http://www.iucr.org/cif/dic/cif_ms.dic
     _dictionary.ddl_conformance   4.2.0
     _dictionary.licensing_SPDX    CC-BY-4.0
@@ -42,7 +42,7 @@ save_CIF_MS_HEAD
     _definition.id                CIF_MS_HEAD
     _definition.scope             Category
     _definition.class             Head
-    _definition.update            2025-12-05
+    _definition.update            2026-06-18
     _description.text
 ;
       Encompasses groups of categories applicable to modulated structures.
@@ -52,8 +52,8 @@ save_CIF_MS_HEAD
 
     _import.get
         [
-         {'dupl':Ignore  'file':multi_block_core.dic  'mode':Full
-          'save':MULTIBLOCK_CORE}
+         {'dupl':Ignore  'file':cif_core_multiblock.dic  'mode':Full
+          'save':CIF_CORE_MULTIBLOCK_HEAD}
          {'dupl':Ignore  'file':cif_twin.dic  'mode':Full  'save':CIF_TWIN_HEAD}
         ]
 
@@ -18592,7 +18592,7 @@ save_
         2024-12-12
         Technical fixes (JRH)
 ;
-         3.2.5                    2026-06-15
+         3.2.5                    2026-06-18
 ;
         _SPECIAL_FUNC categories, replaced by:
         _DISPLACE_SAWTOOTH
