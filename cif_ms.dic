@@ -15603,7 +15603,7 @@ save_GEOM_BOND
       _category_key.name
          '_geom_bond.atom_site_label_1'
          '_geom_bond.atom_site_label_2'
-         '_geom_angle.model_id'
+         '_geom_bond.model_id'
          '_geom_bond.site_ssg_symmetry_1'
          '_geom_bond.site_ssg_symmetry_2'
 
@@ -15807,7 +15807,7 @@ save_GEOM_CONTACT
       _category_key.name
          '_geom_contact.atom_site_label_1'
          '_geom_contact.atom_site_label_2'
-         '_geom_angle.model_id'
+         '_geom_contact.model_id'
          '_geom_contact.site_ssg_symmetry_1'
          '_geom_contact.site_ssg_symmetry_2'
 
@@ -15974,7 +15974,7 @@ save_GEOM_HBOND
          '_geom_hbond.atom_site_label_D'
          '_geom_hbond.atom_site_label_H'
          '_geom_hbond.atom_site_label_A'
-         '_geom_angle.model_id'
+         '_geom_hbond.model_id'
          '_geom_hbond.site_ssg_symmetry_D'
          '_geom_hbond.site_ssg_symmetry_H'
          '_geom_hbond.site_ssg_symmetry_A'
@@ -16512,7 +16512,7 @@ save_GEOM_TORSION
          '_geom_torsion.atom_site_label_2'
          '_geom_torsion.atom_site_label_3'
          '_geom_torsion.atom_site_label_4'
-         '_geom_angle.model_id'
+         '_geom_torsion.model_id'
          '_geom_torsion.site_ssg_symmetry_1'
          '_geom_torsion.site_ssg_symmetry_2'
          '_geom_torsion.site_ssg_symmetry_3'
