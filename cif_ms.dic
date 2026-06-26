@@ -17756,11 +17756,7 @@ save_superspace_group.id
     _definition.update            2026-06-07
     _description.text
 ;
-    Unique identifier for a super space group.
-
-    Two space groups can share the same identifier if and only if they have
-    the same space group name, number, setting, and have their their symmetry
-    operations listed with the same symop ids (see SUPERSPACE_GROUP_SYMOP).
+    Arbitrary unique identifier for a superspace group.
 ;
     _name.category_id             superspace_group
     _name.object_id               id
@@ -18037,7 +18033,7 @@ save_superspace_group_symop.superspace_group_id
     _definition.update            2026-06-07
     _description.text
 ;
-    A code which identifies the super space group to which the symop belongs.
+    A code which identifies the superspace group to which the symop belongs.
 ;
     _name.category_id             superspace_group_symop
     _name.object_id               superspace_group_id
