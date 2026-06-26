@@ -17747,6 +17747,24 @@ save_SUPERSPACE_GROUP
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               SUPERSPACE_GROUP
+    _category_key.name            '_superspace_group.id'
+
+save_
+
+save_superspace_group.id
+
+    _definition.id                '_superspace_group.id'
+    _definition.update            2026-06-07
+    _description.text
+;
+    Arbitrary unique identifier for a superspace group.
+;
+    _name.category_id             superspace_group
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
@@ -17902,7 +17920,7 @@ save_SUPERSPACE_GROUP_SYMOP
     _definition.id                SUPERSPACE_GROUP_SYMOP
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2025-06-04
+    _definition.update            2026-06-07
     _description.text
 ;
       The SUPERSPACE_GROUP_SYMOP category contains information about the
@@ -17910,7 +17928,12 @@ save_SUPERSPACE_GROUP_SYMOP
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               SUPERSPACE_GROUP_SYMOP
-    _category_key.name            '_superspace_group_symop.id'
+
+    loop_
+      _category_key.name
+         '_superspace_group_symop.id'
+         '_superspace_group_symop.superspace_group_id'
+
     _description_example.case
 ;
     #\#CIF_2.0
@@ -17919,6 +17942,7 @@ save_SUPERSPACE_GROUP_SYMOP
 
     _space_group.crystal_system              trigonal
     _superspace_group.name                   'R-3m(00\g)0s'
+    _superspace_group.id                     SSG_01
 
     loop_
      _superspace_group_symop.id
@@ -18001,6 +18025,24 @@ save_superspace_group_symop.operation_algebraic
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Code
+
+save_
+
+save_superspace_group_symop.superspace_group_id
+
+    _definition.id                '_superspace_group_symop.superspace_group_id'
+    _definition.update            2026-06-07
+    _description.text
+;
+    A code which identifies the superspace group to which the symop belongs.
+;
+    _name.category_id             superspace_group_symop
+    _name.object_id               superspace_group_id
+    _name.linked_item_id          '_superspace_group.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
@@ -18248,6 +18290,24 @@ save_twin_refln.index_m_list
 
 _twin_refln.index_m_list = temp.index_m_list[0:_cell.modulation_dimension - 1]
 ;
+
+save_
+
+save_structure.superspace_group_id
+
+    _definition.id                '_structure.superspace_group_id'
+    _definition.update            2026-06-15
+    _description.text
+;
+    A code which identifies the superspace group describing the structure.
+;
+    _name.category_id             structure
+    _name.object_id               superspace_group_id
+    _name.linked_item_id          '_superspace_group.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
@@ -18672,6 +18732,11 @@ save_
         Changed the _category_key.name  of DIFFRN_REFLN and REFLN to
         _diffrn_refln.id and _refln.id, respectively.
 
+        2026-06-15        
+        Added key _superspace_group.id and linked key
+        _superspace_group_symop.superspace_group_id
+
+        Added linked non-key _structure.superspace_group_id
         2026-06-18
 
         Explicitly deprecated the ATOM_SITES_DISPLACE_FOURIER category.
