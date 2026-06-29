@@ -18732,7 +18732,7 @@ save_
         Changed the _category_key.name  of DIFFRN_REFLN and REFLN to
         _diffrn_refln.id and _refln.id, respectively.
 
-        2026-06-15        
+        2026-06-15
         Added key _superspace_group.id and linked key
         _superspace_group_symop.superspace_group_id
 
