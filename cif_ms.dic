@@ -25,7 +25,7 @@ data_CIF_MS
     _dictionary.formalism         Modulated
     _dictionary.class             Instance
     _dictionary.version           3.2.5
-    _dictionary.date              2026-06-18
+    _dictionary.date              2026-06-22
     _dictionary.uri               http://www.iucr.org/cif/dic/cif_ms.dic
     _dictionary.ddl_conformance   4.2.0
     _dictionary.licensing_SPDX    CC-BY-4.0
@@ -9691,7 +9691,7 @@ save_
 
 save_atom_sites_modulation.structure_id
 
-    _definition.id                '_modulation.structure_id'
+    _definition.id                '_atom_sites_modulation.structure_id'
     _definition.update            2026-06-15
     _description.text
 ;
@@ -18721,7 +18721,7 @@ save_
         2024-12-12
         Technical fixes (JRH)
 ;
-         3.2.5                    2026-06-18
+         3.2.5                    2026-06-22
 ;
         _SPECIAL_FUNC categories, replaced by:
         _DISPLACE_SAWTOOTH
@@ -18803,7 +18803,7 @@ save_
         2026-06-15
         Added linked key *.structure_id data names to ATOM_SITES_AXES,
         ATOM_SITES_MODULATION, and ATOM_SITES_ORTHO.
-  
+
         Added key _superspace_group.id and linked key
         _superspace_group_symop.superspace_group_id
 
