@@ -3035,7 +3035,6 @@ save_ATOM_SITE_DISPLACE_ORTHO
          '_atom_site_displace_ortho.id'
          '_atom_site_displace_ortho.structure_id'
 
-    _category_key.name            '_atom_site_displace_ortho.id'
     _description_example.case
 ;
         #\#CIF_2.0
@@ -6042,10 +6041,8 @@ save_ATOM_SITE_OCC_ORTHO
 
     loop_
       _category_key.name
-         '.id'
-         '.structure_id'
-
-    _category_key.name            '_atom_site_occ_ortho.id'
+         '_atom_site_occ_ortho.id'
+         '_atom_site_occ_ortho.structure_id'
 
 save_
 
