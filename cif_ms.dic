@@ -1257,6 +1257,24 @@ save_atom_site_anharmonic_adp_fourier_param.sin_su
 
 save_
 
+save_atom_site_anharmonic_adp_fourier_param.structure_id
+
+    _definition.id                '_atom_site_anharmonic_ADP_Fourier_param.structure_id'
+    _definition.update            2026-06-03
+    _description.text
+;
+    A code identifying the structure to which this atom site belongs.
+;
+    _name.category_id             atom_site_anharmonic_ADP_Fourier_param
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_ATOM_SITE_ANHARMONIC_ADP_LEGENDRE
 
     _definition.id                ATOM_SITE_ANHARMONIC_ADP_LEGENDRE
@@ -19282,6 +19300,7 @@ save_
 
         Added _structure.id non-key linked data names to:
         ATOM_SITE_ANHARMONIC_ADP_FOURIER
+        ATOM_SITE_ANHARMONIC_ADP_FOURIER_PARAM
         ATOM_SITE_ANHARMONIC_ADP_ORTHO
         ATOM_SITE_ANHARMONIC_ADP_XHARM
         ATOM_SITE_DISPLACE_FOURIER
