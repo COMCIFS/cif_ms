@@ -786,13 +786,14 @@ save_
 
 save_atom_site_anharmonic_adp_fourier.structure_id
 
-    _definition.id                '_atom_site_anharmonic_ADP_fourier.structure_id'
+    _definition.id
+        '_atom_site_anharmonic_ADP_Fourier.structure_id'
     _definition.update            2026-06-03
     _description.text
 ;
     A code identifying the structure to which this atom site belongs.
 ;
-    _name.category_id             atom_site_anharmonic_ADP_fourier
+    _name.category_id             atom_site_anharmonic_ADP_Fourier
     _name.object_id               structure_id
     _name.linked_item_id          '_structure.id'
     _type.purpose                 Link
@@ -1269,7 +1270,8 @@ save_
 
 save_atom_site_anharmonic_adp_fourier_param.structure_id
 
-    _definition.id                '_atom_site_anharmonic_ADP_Fourier_param.structure_id'
+    _definition.id
+        '_atom_site_anharmonic_ADP_Fourier_param.structure_id'
     _definition.update            2026-06-03
     _description.text
 ;
@@ -1409,7 +1411,8 @@ save_
 
 save_atom_site_anharmonic_adp_legendre.structure_id
 
-    _definition.id                '_atom_site_anharmonic_ADP_Legendre.structure_id'
+    _definition.id
+        '_atom_site_anharmonic_ADP_Legendre.structure_id'
     _definition.update            2026-06-03
     _description.text
 ;
@@ -2648,7 +2651,8 @@ save_
 
 save_atom_site_displace_fourier_param.structure_id
 
-    _definition.id                '_atom_site_displace_Fourier_param.structure_id'
+    _definition.id
+        '_atom_site_displace_Fourier_param.structure_id'
     _definition.update            2026-06-03
     _description.text
 ;
