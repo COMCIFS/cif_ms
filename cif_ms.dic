@@ -2614,7 +2614,7 @@ save_atom_site_displace_fourier_param.sin_su
 
 save_
 
-save_atom_site_displace_Fourier_param.structure_id
+save_atom_site_displace_fourier_param.structure_id
 
     _definition.id                '_atom_site_displace_Fourier_param.structure_id'
     _definition.update            2026-06-03
