@@ -1393,7 +1393,7 @@ save_atom_site_anharmonic_adp_legendre.order
 
 save_
 
-save_atom_site_anharmonic_adp_Legendre.structure_id
+save_atom_site_anharmonic_adp_legendre.structure_id
 
     _definition.id                '_atom_site_anharmonic_ADP_Legendre.structure_id'
     _definition.update            2026-06-03
@@ -19301,6 +19301,7 @@ save_
         Added _structure.id non-key linked data names to:
         ATOM_SITE_ANHARMONIC_ADP_FOURIER
         ATOM_SITE_ANHARMONIC_ADP_FOURIER_PARAM
+        ATOM_SITE_ANHARMONIC_ADP_LEGENDRE
         ATOM_SITE_ANHARMONIC_ADP_ORTHO
         ATOM_SITE_ANHARMONIC_ADP_XHARM
         ATOM_SITE_DISPLACE_FOURIER
@@ -19320,7 +19321,7 @@ save_
         ATOM_SITE_U_ORTHO
         ATOM_SITE_U_XHARM
 
-        2026-06-15        
+        2026-06-15
         Added key _superspace_group.id and linked key
         _superspace_group_symop.superspace_group_id
 
