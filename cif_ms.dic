@@ -7207,6 +7207,24 @@ save_atom_site_rot_fourier_param.sin_su
 
 save_
 
+save_atom_site_rot_fourier_param.structure_id
+
+    _definition.id                '_atom_site_rot_Fourier_param.structure_id'
+    _definition.update            2026-06-03
+    _description.text
+;
+    A code identifying the structure to which this atom site belongs.
+;
+    _name.category_id             atom_site_rot_Fourier_param
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_ATOM_SITE_ROT_LEGENDRE
 
     _definition.id                ATOM_SITE_ROT_LEGENDRE
@@ -19346,6 +19364,7 @@ save_
         ATOM_SITE_DISPLACE_ORTHO
         ATOM_SITE_DISPLACE_XHARM
         ATOM_SITE_OCC_FOURIER
+        ATOM_SITE_OCC_FOURIER_PARAM
         ATOM_SITE_OCC_LEGENDRE
         ATOM_SITE_OCC_ORTHO
         ATOM_SITE_OCC_XHARM
