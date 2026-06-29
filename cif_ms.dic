@@ -25,7 +25,7 @@ data_CIF_MS
     _dictionary.formalism         Modulated
     _dictionary.class             Instance
     _dictionary.version           3.2.5
-    _dictionary.date              2026-06-18
+    _dictionary.date              2026-06-29
     _dictionary.uri               http://www.iucr.org/cif/dic/cif_ms.dic
     _dictionary.ddl_conformance   4.2.0
     _dictionary.licensing_SPDX    CC-BY-4.0
@@ -9857,7 +9857,9 @@ save_ATOM_SITES_ROT_FOURIER
     _definition.id                ATOM_SITES_ROT_FOURIER
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2024-08-09
+    _definition_replaced.id       1
+    _definition_replaced.by       .
+    _definition.update            2026-06-29
     _description.text
 ;
       Data items in the ATOM_SITES_ROT_FOURIER category record
@@ -9876,7 +9878,9 @@ save_atom_sites_rot_fourier.axes_description
 
     _definition.id                '_atom_sites_rot_Fourier.axes_description'
     _alias.definition_id          '_atom_sites_rot_Fourier_axes_description'
-    _definition.update            2014-06-27
+    _definition_replaced.id       1
+    _definition_replaced.by       .
+    _definition.update            2026-06-29
     _description.text
 ;
       DEPRECATED. This data name should not be used. It has been replaced
@@ -18653,7 +18657,7 @@ save_
         2024-12-12
         Technical fixes (JRH)
 ;
-         3.2.5                    2026-06-18
+         3.2.5                    2026-06-29
 ;
         _SPECIAL_FUNC categories, replaced by:
         _DISPLACE_SAWTOOTH
@@ -18732,7 +18736,7 @@ save_
         Changed the _category_key.name  of DIFFRN_REFLN and REFLN to
         _diffrn_refln.id and _refln.id, respectively.
 
-        2026-06-15        
+        2026-06-15
         Added key _superspace_group.id and linked key
         _superspace_group_symop.superspace_group_id
 
@@ -18746,4 +18750,8 @@ save_
 
         Restricted the values of _atom_site_Fourier_wave_vector.seq_id and
         linked data items to positive integers.
+
+        2026-06-29
+
+        Explicitly deprecated the ATOM_SITES_ROT_FOURIER category.
 ;
