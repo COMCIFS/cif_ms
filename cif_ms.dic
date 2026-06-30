@@ -15261,6 +15261,9 @@ save_GEOM_ANGLE
       in the way that they are calculated, even if the
       calculation method is not explicit in either this
       dictionary or the core.
+
+      _geom_angle.model_id may be omitted if only one _model.id
+      is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               GEOM_ANGLE
@@ -15595,6 +15598,9 @@ save_GEOM_BOND
       higher-dimensional superspace form and therefore
       redefines many datanames to reflect the changed
       method of distance calculation.
+
+      _geom_bond.model_id may be omitted if only one
+      _model.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               GEOM_BOND
@@ -15799,6 +15805,9 @@ save_GEOM_CONTACT
       the symmetry-operation code used in bond listings to the
       higher-dimensional superspace form and therefore redefines many
       datanames to reflect the changed method of distance calculation.
+
+      _geom_contact.model_id may be omitted if only one _model.id is
+      present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               GEOM_CONTACT
@@ -15965,6 +15974,9 @@ save_GEOM_HBOND
      to the higher-dimensional superspace form and therefore redefines many
      datanames to reflect the changed method of distance and angle
      calculation.
+
+     _geom_hbond.model_id may be omitted if only one _model.id is present
+     in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               GEOM_HBOND
@@ -16502,6 +16514,9 @@ save_GEOM_TORSION
      higher-dimensional superspace form and therefore redefines many
      datanames to reflect the changed method of distance and angle
      calculation.
+
+     _geom_torsion.model_id may be omitted if only one _model.id is
+     present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               GEOM_TORSION
