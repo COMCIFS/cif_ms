@@ -9877,9 +9877,9 @@ save_
 save_atom_sites_rot_fourier.axes_description
 
     _definition.id                '_atom_sites_rot_Fourier.axes_description'
-    _alias.definition_id          '_atom_sites_rot_Fourier_axes_description'
     _definition_replaced.id       1
     _definition_replaced.by       .
+    _alias.definition_id          '_atom_sites_rot_Fourier_axes_description'
     _definition.update            2026-06-29
     _description.text
 ;
