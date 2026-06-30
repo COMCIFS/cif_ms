@@ -19709,4 +19709,10 @@ save_
         2026-06-29
 
         Explicitly deprecated the ATOM_SITES_ROT_FOURIER category.
+
+        2026-06-30
+
+        Added _cell_wave_vector.structure_id as linked key.
+        Added _cell_wave_vectors.id as Set key.
+        Added _cell_wave_vector.vectors_id as linked, non key data name.
 ;
