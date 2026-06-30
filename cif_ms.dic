@@ -13542,7 +13542,7 @@ save_
 
 save_cell_wave_vector.vectors_id
 
-    _definition.id                '_cell_wave_vector.structure_id'
+    _definition.id                '_cell_wave_vector.vectors_id'
     _definition.update            2026-06-30
     _description.text
 ;
