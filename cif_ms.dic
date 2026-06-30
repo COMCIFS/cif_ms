@@ -6115,7 +6115,7 @@ save_ATOM_SITE_ROT_FOURIER
          _atom_site_displace_Fourier.wave_vector_seq_id
          _atom_site_displace_Fourier_param.modulus
          _atom_site_displace_Fourier_param.phase
-          S_x_1     S      x  .  1 -0.00453(2)  0.388(1)
+          S_x_1     S      x  .  1  0.00453(2)  0.888(1)
           S_y_1     S      y  .  1  0.0000      0.000
           S_z_1     S      z  .  1  0.02053(4)  0.3190(3)
           S_x_2     S      x  .  2  0.0000      0.0000
@@ -6506,7 +6506,7 @@ save_ATOM_SITE_ROT_FOURIER_PARAM
          _atom_site_displace_Fourier_param.id
          _atom_site_displace_Fourier_param.modulus
          _atom_site_displace_Fourier_param.phase
-          S_x_1    -0.00453(2)  0.388(1)
+          S_x_1     0.00453(2)  0.888(1)
           S_y_1     0.0000      0.000
           S_z_1     0.02053(4)  0.3190(3)
           S_x_2     0.0000      0.0000
