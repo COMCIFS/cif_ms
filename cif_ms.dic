@@ -25,7 +25,7 @@ data_CIF_MS
     _dictionary.formalism         Modulated
     _dictionary.class             Instance
     _dictionary.version           3.2.5
-    _dictionary.date              2026-06-29
+    _dictionary.date              2026-06-30
     _dictionary.uri               http://www.iucr.org/cif/dic/cif_ms.dic
     _dictionary.ddl_conformance   4.2.0
     _dictionary.licensing_SPDX    CC-BY-4.0
@@ -9249,13 +9249,14 @@ save_atom_sites_displace_fourier.axes_description
     loop_
       _definition_replaced.id
       _definition_replaced.by
-         1                        '_atom_sites_axes.matrix_seq_id'
-         2                        '_atom_sites_axes.matrix'
-         3                        '_atom_sites_axes.transf_description'
+         1                        '_atom_site_displace_Fourier.matrix_seq_id'
+         2                        '_atom_sites_axes.matrix_seq_id'
+         3                        '_atom_sites_axes.matrix'
+         4                        '_atom_sites_axes.transf_description'
 
     _alias.definition_id
         '_atom_sites_displace_Fourier_axes_description'
-    _definition.update            2024-07-27
+    _definition.update            2026-06-30
     _description.text
 ;
       DEPRECATED. This data name should not be used. It has been replaced
@@ -9874,10 +9875,17 @@ save_
 save_atom_sites_rot_fourier.axes_description
 
     _definition.id                '_atom_sites_rot_Fourier.axes_description'
-    _definition_replaced.id       1
-    _definition_replaced.by       .
+
+    loop_
+      _definition_replaced.id
+      _definition_replaced.by
+         1                        '_atom_site_rot_Fourier.matrix_seq_id'
+         2                        '_atom_sites_axes.matrix_seq_id'
+         3                        '_atom_sites_axes.matrix'
+         4                        '_atom_sites_axes.transf_description'
+
     _alias.definition_id          '_atom_sites_rot_Fourier_axes_description'
-    _definition.update            2026-06-29
+    _definition.update            2026-06-30
     _description.text
 ;
       DEPRECATED. This data name should not be used. It has been replaced
@@ -18654,7 +18662,7 @@ save_
         2024-12-12
         Technical fixes (JRH)
 ;
-         3.2.5                    2026-06-29
+         3.2.5                    2026-06-30
 ;
         _SPECIAL_FUNC categories, replaced by:
         _DISPLACE_SAWTOOTH
@@ -18751,4 +18759,9 @@ save_
         2026-06-29
 
         Explicitly deprecated the ATOM_SITES_ROT_FOURIER category.
+
+        2026-06-30
+
+        Improved deprecation of _atom_sites_displace_Fourier.axes_description
+        and _atom_sites_rot_Fourier.axes_description.
 ;
