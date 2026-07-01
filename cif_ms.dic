@@ -16984,7 +16984,7 @@ save_REFLN
     _definition.id                REFLN
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2025-06-22
+    _definition.update            2026-06-05
     _description.text
 ;
       Data items in the REFLN category record details about the
@@ -16996,10 +16996,17 @@ save_REFLN
       are extensions of the core CIF dictionary definitions to the
       indexing of reflections used in the refinement by
       higher-dimensional components.
+
+      _refln.structure_id may be omitted if only one _structure.id
+      is present in the same data block
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               REFLN
-    _category_key.name            '_refln.id'
+
+    loop_
+      _category_key.name
+         '_refln.id'
+         '_refln.structure_id'
 
 save_
 
@@ -17225,6 +17232,28 @@ save_refln.index_m_list
            _refln.index_m_list =                                              \
                 temp.index_m_list[0:_cell.modulation_dimension - 1]
 ;
+
+save_
+
+save_refln.structure_id
+
+    _definition.id                '_refln.structure_id'
+    _definition.update            2026-06-05
+    _description.text
+;
+    A code identifying the crystallographic structure associated with this
+    reflection.
+
+    This data name may be omitted if only one _structure.id is present in
+    the same data block.
+;
+    _name.category_id             refln
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
@@ -18741,11 +18770,17 @@ save_
         Changed the _category_key.name  of DIFFRN_REFLN and REFLN to
         _diffrn_refln.id and _refln.id, respectively.
 
+        2026-06-05
+
+        add linked key _refln.structure_id
+
         2026-06-15
+
         Added key _superspace_group.id and linked key
         _superspace_group_symop.superspace_group_id
 
         Added linked non-key _structure.superspace_group_id
+
         2026-06-18
 
         Explicitly deprecated the ATOM_SITES_DISPLACE_FOURIER category.
