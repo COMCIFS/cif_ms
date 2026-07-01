@@ -9180,7 +9180,7 @@ save_
 save_atom_sites_axes.matrix_seq_id
 
     _definition.id                '_atom_sites_axes.matrix_seq_id'
-    _definition.update            2025-10-28
+    _definition.update            2026-06-30
     _description.text
 ;
       A numeric code to identify each transformation matrix given
@@ -9192,7 +9192,7 @@ save_atom_sites_axes.matrix_seq_id
     _type.source                  Related
     _type.container               Single
     _type.contents                Integer
-    _enumeration.range            0:
+    _enumeration.range            1:
     _units.code                   none
 
 save_
@@ -9249,13 +9249,14 @@ save_atom_sites_displace_fourier.axes_description
     loop_
       _definition_replaced.id
       _definition_replaced.by
-         1                        '_atom_sites_axes.matrix_seq_id'
-         2                        '_atom_sites_axes.matrix'
-         3                        '_atom_sites_axes.transf_description'
+         1                        '_atom_site_displace_Fourier.matrix_seq_id'
+         2                        '_atom_sites_axes.matrix_seq_id'
+         3                        '_atom_sites_axes.matrix'
+         4                        '_atom_sites_axes.transf_description'
 
     _alias.definition_id
         '_atom_sites_displace_Fourier_axes_description'
-    _definition.update            2024-07-27
+    _definition.update            2026-06-30
     _description.text
 ;
       DEPRECATED. This data name should not be used. It has been replaced
@@ -9874,10 +9875,17 @@ save_
 save_atom_sites_rot_fourier.axes_description
 
     _definition.id                '_atom_sites_rot_Fourier.axes_description'
-    _definition_replaced.id       1
-    _definition_replaced.by       .
+
+    loop_
+      _definition_replaced.id
+      _definition_replaced.by
+         1                        '_atom_site_rot_Fourier.matrix_seq_id'
+         2                        '_atom_sites_axes.matrix_seq_id'
+         3                        '_atom_sites_axes.matrix'
+         4                        '_atom_sites_axes.transf_description'
+
     _alias.definition_id          '_atom_sites_rot_Fourier_axes_description'
-    _definition.update            2026-06-29
+    _definition.update            2026-06-30
     _description.text
 ;
       DEPRECATED. This data name should not be used. It has been replaced
@@ -18824,4 +18832,10 @@ save_
         Added _cell_wave_vector.structure_id as linked key.
         Added _cell_wave_vectors.id as Set key.
         Added _cell_wave_vector.vectors_id as linked, non key data name.
+
+        Improved deprecation of _atom_sites_displace_Fourier.axes_description
+        and _atom_sites_rot_Fourier.axes_description.
+
+        Changed the lower enumeration range of _atom_sites_axes.matrix_seq_id
+        from 0 to 1.
 ;
