@@ -17235,28 +17235,6 @@ save_refln.index_m_list
 
 save_
 
-save_refln.structure_id
-
-    _definition.id                '_refln.structure_id'
-    _definition.update            2026-06-05
-    _description.text
-;
-    A code identifying the crystallographic structure associated with this
-    reflection.
-
-    This data name may be omitted if only one _structure.id is present in
-    the same data block.
-;
-    _name.category_id             refln
-    _name.object_id               structure_id
-    _name.linked_item_id          '_structure.id'
-    _type.purpose                 Link
-    _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Word
-
-save_
-
 save_REFLNS
 
     _definition.id                REFLNS
@@ -18772,7 +18750,8 @@ save_
 
         2026-06-05
 
-        add linked key _refln.structure_id
+        Add key _refln.structure_id to REFLN to keep in line with
+        CIF_CORE_MULTIBLOCK.
 
         2026-06-15
 
