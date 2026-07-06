@@ -13443,7 +13443,7 @@ save_
 
 save_cell_subsystem.subsystems_id
 
-    _definition.id                '_space_group_generator.subsystems_id'
+    _definition.id                '_cell_subsystem.subsystems_id'
     _definition.update            2026-07-06
     _description.text
 ;
