@@ -10330,6 +10330,7 @@ save_CELL_SUBSYSTEM
     #\#CIF_2.0
 
     # - - - - data truncated for brevity - - - -
+    _structure.id   Sr14/11CoO3
 
     _cell.modulation_dimension               1
 
