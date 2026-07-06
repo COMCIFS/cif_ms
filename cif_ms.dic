@@ -13441,25 +13441,6 @@ save_cell_subsystem.matrix_w_9_9
 
 save_
 
-save_cell_subsystem.subsystems_id
-
-    _definition.id                '_cell_subsystem.subsystems_id'
-    _definition.update            2026-07-06
-    _description.text
-;
-    A code which identifies the cell subsystems information applicable
-    to this subsystem.
-;
-    _name.category_id             cell_subsystem
-    _name.object_id               subsystems_id
-    _name.linked_item_id          '_cell_subsystems.id'
-    _type.purpose                 Link
-    _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Word
-
-save_
-
 save_cell_subsystem.structure_id
 
     _definition.id                '_cell_subsystem.structure_id'
@@ -13472,6 +13453,25 @@ save_cell_subsystem.structure_id
     _name.category_id             cell_subsystem
     _name.object_id               structure_id
     _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
+save_cell_subsystem.subsystems_id
+
+    _definition.id                '_cell_subsystem.subsystems_id'
+    _definition.update            2026-07-06
+    _description.text
+;
+    A code which identifies the cell subsystems information applicable
+    to this subsystem.
+;
+    _name.category_id             cell_subsystem
+    _name.object_id               subsystems_id
+    _name.linked_item_id          '_cell_subsystems.id'
     _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
