@@ -10415,7 +10415,7 @@ save_cell_subsystem.description
 ;
       Description of each subsystem defining a composite structurally.
       The number of definitions must match the number given in
-      _cell_subsystems_number.
+      _cell_subsystems.number.
 ;
     _name.category_id             cell_subsystem
     _name.object_id               description
