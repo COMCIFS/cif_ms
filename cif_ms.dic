@@ -10391,12 +10391,10 @@ save_cell_subsystem.code
 
     _definition.id                '_cell_subsystem.code'
     _alias.definition_id          '_cell_subsystem_code'
-    _definition.update            2014-06-27
+    _definition.update            2026-07-06
     _description.text
 ;
-      The code identifying uniquely a certain composite subsystem.
-      This code is used to identify the data blocks that contain
-      the structural information associated with the subsystem.
+      The code uniquely identifying a certain composite subsystem.
 ;
     _name.category_id             cell_subsystem
     _name.object_id               code
