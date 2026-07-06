@@ -13441,6 +13441,25 @@ save_cell_subsystem.matrix_w_9_9
 
 save_
 
+save_cell_subsystem.subsystems_id
+
+    _definition.id                '_space_group_generator.subsystems_id'
+    _definition.update            2026-07-06
+    _description.text
+;
+    A code which identifies the cell subsystems information applicable
+    to this subsystem.
+;
+    _name.category_id             cell_subsystem
+    _name.object_id               subsystems_id
+    _name.linked_item_id          '_cell_subsystems.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_cell_subsystem.structure_id
 
     _definition.id                '_cell_subsystems.structure_id'
@@ -18836,5 +18855,6 @@ save_
         2026-07-06
 
         Added _cell_subsystem.structure_id as linked category key.
+        Added _cell_subsystem.subsystems_id as linked non-key data name
         Added _cell_subsystems.id as unique category key
 ;
