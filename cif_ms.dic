@@ -13462,7 +13462,7 @@ save_
 
 save_cell_subsystem.structure_id
 
-    _definition.id                '_cell_subsystems.structure_id'
+    _definition.id                '_cell_subsystem.structure_id'
     _definition.update            2026-07-06
     _description.text
 ;
