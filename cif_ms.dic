@@ -10316,6 +10316,9 @@ save_CELL_SUBSYSTEM
       Data items in the CELL_SUBSYSTEM category record details about
       the crystallographic cell parameters of each subsystem present in
       a composite.
+
+      _cell_subsystem.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               CELL_SUBSYSTEM
@@ -13449,6 +13452,9 @@ save_cell_subsystem.structure_id
 ;
     A code identifying the crystallographic structure associated with this
     subsystem description.
+
+    This data name may be omitted if only one _structure.id is present
+    in the same data block.
 ;
     _name.category_id             cell_subsystem
     _name.object_id               structure_id
