@@ -1811,17 +1811,24 @@ save_ATOM_SITE_ANHARMONIC_ADP_XHARM
     _definition.id                ATOM_SITE_ANHARMONIC_ADP_XHARM
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_ANHARMONIC_ADP_XHARM category record
       details about the x-harmonics used to describe the  modulations of
       the anharmonic ADP tensor elements when the atomic domain of a
       given atom is restricted by a crenel function.
+
+      _atom_site_anharmonic_ADP_xharm.structure_id may be omitted if only
+      one _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_ANHARMONIC_ADP_XHARM
-    _category_key.name            '_atom_site_anharmonic_ADP_xharm.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_anharmonic_ADP_xharm.id'
+         '_atom_site_anharmonic_ADP_xharm.structure_id'
 
 save_
 
