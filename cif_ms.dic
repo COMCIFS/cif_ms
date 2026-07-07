@@ -2051,7 +2051,7 @@ save_ATOM_SITE_DISPLACE_FOURIER
     _definition.id                ATOM_SITE_DISPLACE_FOURIER
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_DISPLACE_FOURIER category record
@@ -2334,7 +2334,7 @@ save_ATOM_SITE_DISPLACE_FOURIER_PARAM
     _definition.id                ATOM_SITE_DISPLACE_FOURIER_PARAM
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-07-31
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_DISPLACE_FOURIER_PARAM category
@@ -2728,7 +2728,7 @@ save_ATOM_SITE_DISPLACE_LEGENDRE
     _definition.id                ATOM_SITE_DISPLACE_LEGENDRE
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2025-06-04
+    _definition.update            2026-07-08
     _description.text
 ;
       The set of harmonic functions used in the Fourier series
