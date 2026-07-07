@@ -9364,7 +9364,7 @@ save_ATOM_SITE_U_LEGENDRE
     _definition.id                ATOM_SITE_U_LEGENDRE
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_U_LEGENDRE category record
@@ -9372,15 +9372,25 @@ save_ATOM_SITE_U_LEGENDRE
       harmonic ADP modulations when the atomic domain of a given atom is
       restricted by a crenel function. See ATOM_SITE_DISPLACE_LEGENDRE
       for more detailed information.
+
+      _atom_site_U_Legendre.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_U_LEGENDRE
-    _category_key.name            '_atom_site_u_Legendre.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_U_Legendre.id'
+         '_atom_site_U_Legendre.structure_id'
+
     _description_example.case
 ;
         #\#CIF_2.0
 
         # - - - - data truncated for brevity - - - -
+
+        _structure.id   "YZn_{5+x}"
 
         _cell.modulation_dimension               1
 
@@ -9560,6 +9570,27 @@ save_atom_site_u_legendre.order
     _type.contents                Integer
     _enumeration.range            0:
     _units.code                   none
+
+save_
+
+save_atom_site_u_legendre.structure_id
+
+    _definition.id                '_atom_site_U_Legendre.structure_id'
+    _definition.update            2026-07-08
+    _description.text
+;
+    A code identifying the structure to which this atom site belongs.
+
+    This data name may be omitted if only one _structure.id is present
+    in the same data block.
+;
+    _name.category_id             atom_site_U_Legendre
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
