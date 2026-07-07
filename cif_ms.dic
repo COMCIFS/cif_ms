@@ -2771,6 +2771,9 @@ save_ATOM_SITE_DISPLACE_LEGENDRE
       belonging to the ATOM_SITES_AXES category, through
       _atom_site_displace_Legendre.matrix_seq_id.
 
+      _atom_site_displace_Legendre.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
+
       References: Petricek, V., Van Der Lee & Evain, M. (1995).
                   Acta Cryst. A51, 529-535. DOI 10.1107/S0108767395000365
                   On the Use of Crenel Functions for Occupationally Modulated
@@ -2790,9 +2793,17 @@ save_ATOM_SITE_DISPLACE_LEGENDRE
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_DISPLACE_LEGENDRE
     _category_key.name            '_atom_site_displace_Legendre.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_displace_Legendre.id'
+         '_atom_site_displace_Legendre.structure_id'
+
     _description_example.case
 ;
         #\#CIF_2.0
+
+        _structure.id   Bi-family
 
         # - - - - data truncated for brevity - - - -
 
@@ -3028,6 +3039,27 @@ save_atom_site_displace_legendre.order
     _type.contents                Integer
     _enumeration.range            1:
     _units.code                   none
+
+save_
+
+save_atom_site_displace_legendre.structure_id
+
+    _definition.id                '_atom_site_displace_Legendre.structure_id'
+    _definition.update            2026-07-08
+    _description.text
+;
+    A code identifying the structure to which this atom site belongs.
+
+    This data name may be omitted if only one _structure.id is present
+    in the same data block.
+;
+    _name.category_id             atom_site_displace_Legendre
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
