@@ -6983,7 +6983,7 @@ save_ATOM_SITE_ROT_FOURIER_PARAM
     _definition.id                ATOM_SITE_ROT_FOURIER_PARAM
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2025-06-04
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_ROT_FOURIER_PARAM category record
@@ -7021,15 +7021,25 @@ save_ATOM_SITE_ROT_FOURIER_PARAM
 
       Use of _atom_sites_rot_Fourier.axes_description is DEPRECATED and
       retained only by for backward compatibility.
+
+      _atom_site_rot_Fourier_param.structure_id may be omitted if only
+      one _structure.id is present in the same data block.
 ;
     _name.category_id             ATOM_SITE_ROT_FOURIER
     _name.object_id               ATOM_SITE_ROT_FOURIER_PARAM
-    _category_key.name            '_atom_site_rot_Fourier_param.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_rot_Fourier_param.id'
+         '_atom_site_rot_Fourier_param.structure_id'
+
     _description_example.case
 ;
         #\#CIF_2.0
 
         # - - - - data truncated for brevity - - - -
+
+        _structure.id   "4,4'-Dichlorobiphenyl Sulfone"
 
         _space_group.crystal_system             monoclinic
         _superspace_group.name_WJJ              'P:I2/a:s -1'
@@ -7454,6 +7464,27 @@ save_atom_site_rot_fourier_param.sin_su
     _units.code                   degrees
 
     _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
+save_atom_site_rot_fourier_param.structure_id
+
+    _definition.id                '_atom_site_rot_Fourier_param.structure_id'
+    _definition.update            2026-07-08
+    _description.text
+;
+    A code identifying the structure to which this atom site belongs.
+
+    This data name may be omitted if only one _structure.id is present
+    in the same data block.
+;
+    _name.category_id             atom_site_rot_Fourier_param
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
