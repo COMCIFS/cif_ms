@@ -9792,12 +9792,19 @@ save_ATOM_SITES_ORTHO
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITES_ORTHO
-    _category_key.name            '_atom_sites_ortho.func_id'
+
+    loop_
+      _category_key.name
+         '_atom_sites_ortho.func_id'
+         '_atom_sites_ortho.structure_id'
+
     _description_example.case
 ;
     #\#CIF_2.0
 
     # - - - - data truncated for brevity - - - -
+
+    _structure.id   "\d~1~-CoZn~7.8~"
 
     _cell.modulation_dimension               1
 
