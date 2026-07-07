@@ -5229,7 +5229,7 @@ save_ATOM_SITE_OCC_CRENEL
     _definition.id                ATOM_SITE_OCC_CRENEL
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2025-06-04
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_OCC_CRENEL category record
@@ -5245,15 +5245,25 @@ save_ATOM_SITE_OCC_CRENEL
 
       For more information and references see the description of the
       ATOM_SITE_DISPLACE_SAWTOOTH category.
+
+      _atom_site_occ_crenel.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_OCC_CRENEL
-    _category_key.name            '_atom_site_occ_crenel.atom_site_label'
+
+    loop_
+      _category_key.name
+         '_atom_site_occ_crenel.atom_site_label'
+         '_atom_site_occ_crenel.structure_id'
+
     _description_example.case
 ;
     #\#CIF_2.0
 
     # - - - - data truncated for brevity - - - -
+
+    _structure.id   Bi_family
 
     _cell.modulation_dimension               1
 
@@ -5399,6 +5409,27 @@ save_atom_site_occ_crenel.ortho_eps
     _type.contents                Real
     _enumeration.default          0.95
     _units.code                   none
+
+save_
+
+save_atom_site_occ_crenel.structure_id
+
+    _definition.id                '_atom_site_occ_crenel.structure_id'
+    _definition.update            2026-07-08
+    _description.text
+;
+    A code identifying the structure to which this atom site belongs.
+
+    This data name may be omitted if only one _structure.id is present
+    in the same data block.
+;
+    _name.category_id             atom_site_occ_crenel
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
