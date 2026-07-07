@@ -1930,6 +1930,27 @@ save_atom_site_anharmonic_adp_xharm.order
 
 save_
 
+save_atom_site_anharmonic_adp_xharm.structure_id
+
+    _definition.id                '_atom_site_anharmonic_ADP_xharm.structure_id'
+    _definition.update            2026-07-08
+    _description.text
+;
+    A code identifying the structure to which this atom site belongs.
+
+    This data name may be omitted if only one _structure.id is present
+    in the same data block.
+;
+    _name.category_id             atom_site_anharmonic_ADP_xharm
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_atom_site_anharmonic_adp_xharm.tens_elem
 
     _definition.id                '_atom_site_anharmonic_ADP_xharm.tens_elem'
@@ -2042,10 +2063,18 @@ save_ATOM_SITE_DISPLACE_FOURIER
       ATOM_SITE_ROT_FOURIER category. The (in general complex)
       coefficients of each Fourier component belong to the child category
       ATOM_SITE_DISPLACE_FOURIER_PARAM and may be listed separately.
+
+      _atom_site_displace_Fourier.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_DISPLACE_FOURIER
-    _category_key.name            '_atom_site_displace_Fourier.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_displace_Fourier.id'
+         '_atom_site_displace_Fourier.structure_id'
+
     _description_example.case
 ;
         #\#CIF_2.0
@@ -2053,6 +2082,8 @@ save_ATOM_SITE_DISPLACE_FOURIER
         data_I
 
         # - - - - data truncated for brevity - - - -
+
+        _structure.id   levyclaudite-(Sb)
 
         loop_
          _cell_wave_vector.seq_id
@@ -2246,6 +2277,27 @@ save_atom_site_displace_fourier.matrix_seq_id
 
     _import.get
         [{'file':templ_attr.cif  'save':transf_matrix_id}]
+
+save_
+
+save_atom_site_displace_fourier.structure_id
+
+    _definition.id                '_atom_site_displace_Fourier.structure_id'
+    _definition.update            2026-07-08
+    _description.text
+;
+    A code identifying the structure to which this atom site belongs.
+
+    This data name may be omitted if only one _structure.id is present
+    in the same data block.
+;
+    _name.category_id             atom_site_displace_Fourier
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
