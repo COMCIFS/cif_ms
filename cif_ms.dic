@@ -3068,7 +3068,7 @@ save_ATOM_SITE_DISPLACE_ORTHO
     _definition.id                ATOM_SITE_DISPLACE_ORTHO
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2026-06-15
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_DISPLACE_ORTHO category record
@@ -3093,15 +3093,25 @@ save_ATOM_SITE_DISPLACE_ORTHO
       information about the orthogonalized set of functions) using the
       data items defined in the categories ATOM_SITE_DISPLACE_FOURIER
       and ATOM_SITE_DISPLACE_FOURIER_PARAM.
+
+      _atom_site_displace_ortho.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_DISPLACE_ORTHO
-    _category_key.name            '_atom_site_displace_ortho.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_displace_ortho.id'
+         '_atom_site_displace_ortho.structure_id'
+
     _description_example.case
 ;
         #\#CIF_2.0
 
         # - - - - data truncated for brevity - - - -
+
+       _structure.id   "\d~1~-CoZn~7.8~"
 
         _cell.modulation_dimension               1
 
@@ -3371,6 +3381,27 @@ save_atom_site_displace_ortho.matrix_seq_id
 
     _import.get
         [{'file':templ_attr.cif  'save':transf_matrix_id}]
+
+save_
+
+save_atom_site_displace_ortho.structure_id
+
+    _definition.id                '_atom_site_displace_ortho.structure_id'
+    _definition.update            2026-07-08
+    _description.text
+;
+    A code identifying the structure to which this atom site belongs.
+
+    This data name may be omitted if only one _structure.id is present
+    in the same data block.
+;
+    _name.category_id             atom_site_displace_ortho
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
