@@ -8504,7 +8504,7 @@ save_ATOM_SITE_ROT_ZIGZAG
     _definition.id                ATOM_SITE_ROT_ZIGZAG
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2025-06-04
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_ROT_ZIGZAG category record
@@ -8531,10 +8531,17 @@ save_ATOM_SITE_ROT_ZIGZAG
 
       For more information and references see the description of the
       ATOM_SITE_DISPLACE_SAWTOOTH category.
+
+      _atom_site_rot_zigzag.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_ROT_ZIGZAG
-    _category_key.name            '_atom_site_rot_zigzag.atom_site_label'
+
+    loop_
+      _category_key.name
+         '_atom_site_rot_zigzag.atom_site_label'
+         '_atom_site_rot_zigzag.structure_id'
 
 save_
 
@@ -8645,6 +8652,27 @@ save_atom_site_rot_zigzag.matrix_seq_id
 
     _import.get
         [{'file':templ_attr.cif  'save':transf_matrix_id}]
+
+save_
+
+save_atom_site_rot_zigzag.structure_id
+
+    _definition.id                '_atom_site_rot_zigzag.structure_id'
+    _definition.update            2026-07-08
+    _description.text
+;
+    A code identifying the structure to which this atom site belongs.
+
+    This data name may be omitted if only one _structure.id is present
+    in the same data block.
+;
+    _name.category_id             atom_site_rot_zigzag
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
