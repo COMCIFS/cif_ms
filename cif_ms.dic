@@ -227,6 +227,9 @@ save_ATOM_SITE_ANHARMONIC_ADP
       described by items belong to the ATOM_SITE_ANHARMONIC_ADP_FOURIER
       category.
 
+      _atom_site_anharmonic_ADP.structure_id may be omitted if only
+      one _structure.id is present in the same data block.
+
       References: Kuznetsov, P.I., Stratonovich, R.L. & Tikhonov, V.I. (1960).
                   Theory of Probability & Its Applications 5(1), 80-97.
                   DOI 10.1137/1105007
@@ -668,6 +671,9 @@ save_ATOM_SITE_ANHARMONIC_ADP_FOURIER
        Data items in the ATOM_SITE_ANHARMONIC_ADP_FOURIER category record
        details about the Fourier components of the tensors that describe
        the modulation of the anharmonic ADPs in a modulated structure.
+
+       _atom_site_anharmonic_ADP_Fourier.structure_id may be omitted if only
+       one _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_ANHARMONIC_ADP_FOURIER
@@ -967,6 +973,9 @@ save_ATOM_SITE_ANHARMONIC_ADP_FOURIER_PARAM
           for all atoms in the group. t is an arbitrary phase, irrelevant for
           incommensurate modulated structures, but essential in the
           commensurate case (see _atom_sites_modulation.global_phase_t_).
+
+          _atom_site_anharmonic_ADP_Fourier_param.structure_id may be omitted
+          if only one _structure.id is present in the same data block.
 ;
     _name.category_id             ATOM_SITE_ANHARMONIC_ADP_FOURIER
     _name.object_id               ATOM_SITE_ANHARMONIC_ADP_FOURIER_PARAM
@@ -1315,6 +1324,9 @@ save_ATOM_SITE_ANHARMONIC_ADP_LEGENDRE
       details about the Legendre polynomials used to describe the
       modulations of the anharmonic ADP tensor elements when the atomic
       domain of a given atom is restricted by a crenel function.
+
+      _atom_site_anharmonic_ADP_Legendre.structure_id may be omitted if only
+      one _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_ANHARMONIC_ADP_LEGENDRE
@@ -1557,8 +1569,10 @@ save_ATOM_SITE_ANHARMONIC_ADP_ORTHO
       anharmonic ADP tensor elements, when the atomic domain of a given
       atom is restricted by a crenel function. The functions are constructed
       selecting Fourier harmonics until the desired degree of orthogonality
-      and completeness is reached (see
-      _atom_site_occ_crenel.ortho_eps).
+      and completeness is reached (see _atom_site_occ_crenel.ortho_eps).
+
+      _atom_site_anharmonic_ADP_ortho.structure_id may be omitted if only
+      one _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_ANHARMONIC_ADP_ORTHO
