@@ -3410,7 +3410,7 @@ save_ATOM_SITE_DISPLACE_SAWTOOTH
     _definition.id                ATOM_SITE_DISPLACE_SAWTOOTH
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2025-06-04
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_DISPLACE_SAWTOOTH category record
@@ -3448,6 +3448,9 @@ save_ATOM_SITE_DISPLACE_SAWTOOTH
       belonging to the ATOM_SITES_AXES category, through
       _atom_site_displace_sawtooth.matrix_seq_id.
 
+      _atom_site_displace_sawtooth.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
+
       References: Petricek, V., Dusek, M. & Palatinus, L. (2014).
                   Z. Kristallogr. 229(5), 345-352.  DOI 10.1515/zkri-2014-1737
                   Crystallographic Computing System JANA2006: General features
@@ -3468,12 +3471,20 @@ save_ATOM_SITE_DISPLACE_SAWTOOTH
     _category_key.name            '_atom_site_displace_sawtooth.atom_site_label'
 
     loop_
+      _category_key.name
+         '_atom_site_displace_sawtooth.atom_site_label'
+         '_atom_site_displace_sawtooth.structure_id'
+
+
+    loop_
       _description_example.case
       _description_example.detail
 ;
        #\#CIF_2.0
 
        # - - - - data truncated for brevity - - - -
+
+       _structure.id   bismuth_cuprate
 
        _cell.modulation_dimension        1
 
@@ -3519,6 +3530,8 @@ save_ATOM_SITE_DISPLACE_SAWTOOTH
        # Same example using vectors
 
        # - - - - data truncated for brevity - - - -
+
+       _structure.id   bismuth-cuprate
 
        _cell.modulation_dimension        1
 
@@ -3792,6 +3805,27 @@ save_atom_site_displace_sawtooth.matrix_seq_id
 
     _import.get
         [{'file':templ_attr.cif  'save':transf_matrix_id}]
+
+save_
+
+save_atom_site_displace_sawtooth.structure_id
+
+    _definition.id                '_atom_site_displace_sawtooth.structure_id'
+    _definition.update            2026-07-08
+    _description.text
+;
+    A code identifying the structure to which this atom site belongs.
+
+    This data name may be omitted if only one _structure.id is present
+    in the same data block.
+;
+    _name.category_id             atom_site_displace_sawtooth
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
