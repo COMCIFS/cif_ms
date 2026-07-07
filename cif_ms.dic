@@ -9348,7 +9348,7 @@ save_ATOM_SITES_MODULATION
     _definition.id                ATOM_SITES_MODULATION
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2025-06-04
+    _definition.update            2026-06-15
     _description.text
 ;
       Data items in the ATOM_SITES_MODULATION category record details
@@ -9359,11 +9359,14 @@ save_ATOM_SITES_MODULATION
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITES_MODULATION
+    _category_key.name            '_atom_sites_modulation.structure_id'
     _description_example.case
 ;
         #\#CIF_2.0
 
         # - - - - data truncated for brevity - - - -
+
+        _structure.id   Fe(NCS)~2~
 
         _cell.modulation_dimension               1
 
