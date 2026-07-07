@@ -2373,15 +2373,25 @@ save_ATOM_SITE_DISPLACE_FOURIER_PARAM
       Use of _atom_sites_displace_Fourier.axes_description is DEPRECATED
       and retained only for backward compatibility. Notice that in this
       case displacements were expressed in angstroms.
+
+      _atom_site_displace_Fourier_param.structure_id may be omitted if only
+      one _structure.id is present in the same data block.
 ;
     _name.category_id             ATOM_SITE_DISPLACE_FOURIER
     _name.object_id               ATOM_SITE_DISPLACE_FOURIER_PARAM
-    _category_key.name            '_atom_site_displace_Fourier_param.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_displace_Fourier_param.id'
+         '_atom_site_displace_Fourier_param.structure_id'
+
     _description_example.case
 ;
         #\#CIF_2.0
 
         data_I
+
+        _structure.id   levyclaudite-(Sb)
 
         # - - - - data truncated for brevity - - - -
 
@@ -2688,6 +2698,28 @@ save_atom_site_displace_fourier_param.sin_su
     _units.code                   none
 
     _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
+save_atom_site_displace_fourier_param.structure_id
+
+    _definition.id
+        '_atom_site_displace_Fourier_param.structure_id'
+    _definition.update            2026-07-08
+    _description.text
+;
+    A code identifying the structure to which this atom site belongs.
+
+    This data name may be omitted if only one _structure.id is present
+    in the same data block.
+;
+    _name.category_id             atom_site_displace_Fourier_param
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
