@@ -4566,7 +4566,7 @@ save_atom_site_fourier_wave_vector.q_coeff
                                m.q5_coeff, m.q6_coeff, m.q7_coeff, m.q8_coeff,\
                                m.q9_coeff]
 
-         #Matrix dimension is adjusted here here
+         #Matrix dimension is adjusted here
 
          _atom_site_Fourier_wave_vector.q_coeff =                             \
             temp_Fourier_wave_vector.q_coeff[0:_cell.modulation_dimension - 1]
@@ -4617,7 +4617,7 @@ save_atom_site_fourier_wave_vector.q_coeff_seq_id
                   m.q4_coeff_seq_id, m.q5_coeff_seq_id, m.q6_coeff_seq_id,    \
                   m.q7_coeff_seq_id, m.q8_coeff_seq_id, m.q9_coeff_seq_id ]
 
-         #Matrix dimension is adjusted here here
+         #Matrix dimension is adjusted here
 
          _atom_site_Fourier_wave_vector.q_coeff_seq_id =                      \
          temp_Fourier_wave_vector.q_coeff_seq_id[0:_cell.modulation_dimension \
@@ -6990,7 +6990,7 @@ save_ATOM_SITE_ROT_ORTHO
       Data items in the ATOM_SITE_ROT_ORTHO category record
       details about the orthogonalized functions defined to solve
       correlation problems during the refinement of displacive
-      modulations when the the atomic domain of a given atom is
+      modulations when the atomic domain of a given atom is
       restricted by a crenel function. The functions are constructed
       selecting Fourier harmonics until the desired degree of
       orthogonality and completeness is reached (see
@@ -8326,7 +8326,7 @@ save_atom_site_u_fourier_param.modulus
     _definition.update            2025-10-20
     _description.text
 ;
-      The the modulus [|U(ij)n|] of the complex amplitudes corresponding
+      The modulus [|U(ij)n|] of the complex amplitudes corresponding
       to the Fourier term defined by _atom_site_U_Fourier.atom_site_label,
       _atom_site_U_Fourier.tens_elem and
       _atom_site_U_Fourier.wave_vector_seq_id.
@@ -10570,7 +10570,7 @@ save_cell_subsystem.matrix_w
           m.matrix_W_12_5,m.matrix_W_12_6 ,m.matrix_W_12_7 ,m.matrix_W_12_8  ,\
           m.matrix_W_12_9,m.matrix_W_12_10,m.matrix_W_12_11,m.matrix_W_12_12] ]
 
-         #Matrix dimension is adjusted here here
+         #Matrix dimension is adjusted here
 
          _cell_subsystem.matrix_W =                                           \
          temp_subsystem.matrix_W[ 0:_cell.modulation_dimension + 2,           \
@@ -18612,7 +18612,7 @@ save_
         Large rewording of _description.text of many items to avoid excesive
         verbosity.
 
-        Modified the definitions of GEOM_HBOND category, according the the core.
+        Modified the definitions of GEOM_HBOND category, according the core.
 
         2024-08-01:
         Deployment of the new save frames of templ_attr.cif.
