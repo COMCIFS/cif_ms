@@ -3473,7 +3473,6 @@ save_ATOM_SITE_DISPLACE_SAWTOOTH
          '_atom_site_displace_sawtooth.atom_site_label'
          '_atom_site_displace_sawtooth.structure_id'
 
-
     loop_
       _description_example.case
       _description_example.detail
@@ -4262,7 +4261,7 @@ save_ATOM_SITE_DISPLACE_ZIGZAG
          '_atom_site_displace_zigzag.atom_site_label'
          '_atom_site_displace_zigzag.structure_id'
 
-     _description_example.case
+    _description_example.case
 ;
     #\#CIF_2.0
 
@@ -6197,7 +6196,6 @@ save_ATOM_SITE_OCC_ORTHO
       _category_key.name
          '_atom_site_occ_ortho.id'
          '_atom_site_occ_ortho.structure_id'
-
 
 save_
 
