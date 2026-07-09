@@ -25,7 +25,7 @@ data_CIF_MS
     _dictionary.formalism         Modulated
     _dictionary.class             Instance
     _dictionary.version           3.2.5
-    _dictionary.date              2026-06-30
+    _dictionary.date              2026-07-08
     _dictionary.uri               http://www.iucr.org/cif/dic/cif_ms.dic
     _dictionary.ddl_conformance   4.2.0
     _dictionary.licensing_SPDX    CC-BY-4.0
@@ -198,7 +198,7 @@ save_ATOM_SITE_ANHARMONIC_ADP
     _definition.id                ATOM_SITE_ANHARMONIC_ADP
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_ANHARMONIC_ADP category record details
@@ -226,6 +226,9 @@ save_ATOM_SITE_ANHARMONIC_ADP
       In that case, the additional modulation parameters would be
       described by items belong to the ATOM_SITE_ANHARMONIC_ADP_FOURIER
       category.
+
+      _atom_site_anharmonic_ADP.structure_id may be omitted if only
+      one _structure.id is present in the same data block.
 
       References: Kuznetsov, P.I., Stratonovich, R.L. & Tikhonov, V.I. (1960).
                   Theory of Probability & Its Applications 5(1), 80-97.
@@ -260,6 +263,7 @@ save_ATOM_SITE_ANHARMONIC_ADP
     loop_
       _category_key.name
          '_atom_site_anharmonic_ADP.atom_site_label'
+         '_atom_site_anharmonic_ADP.structure_id'
          '_atom_site_anharmonic_ADP.tens_elem'
 
     loop_
@@ -269,6 +273,8 @@ save_ATOM_SITE_ANHARMONIC_ADP
         #\#CIF_2.0
 
         # - - - - data truncated for brevity - - - -
+
+        _structure.id   "[CH~3~NH~3~][Co(COOH)~3~]"
 
         _cell.modulation_dimension        1
 
@@ -358,6 +364,8 @@ save_ATOM_SITE_ANHARMONIC_ADP
 
         # - - - - data truncated for brevity - - - -
 
+        _structure.id   Pr~2~SbO~2~
+
         _cell.modulation_dimension        1
 
         loop_
@@ -412,6 +420,8 @@ save_ATOM_SITE_ANHARMONIC_ADP
         #\#CIF_2.0
 
         # - - - - data truncated for brevity - - - -
+
+        _structure.id   PbHfO~3~
 
         loop_
          _atom_site.label
@@ -534,6 +544,17 @@ save_atom_site_anharmonic_adp.coeff_su
 
 save_
 
+save_atom_site_anharmonic_adp.structure_id
+
+    _definition.id                '_atom_site_anharmonic_ADP.structure_id'
+    _name.category_id             atom_site_anharmonic_ADP
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
 save_atom_site_anharmonic_adp.tens_elem
 
     _definition.id                '_atom_site_anharmonic_ADP.tens_elem'
@@ -634,21 +655,31 @@ save_ATOM_SITE_ANHARMONIC_ADP_FOURIER
     _definition.id                ATOM_SITE_ANHARMONIC_ADP_FOURIER
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-07-08
     _description.text
 ;
        Data items in the ATOM_SITE_ANHARMONIC_ADP_FOURIER category record
        details about the Fourier components of the tensors that describe
        the modulation of the anharmonic ADPs in a modulated structure.
+
+       _atom_site_anharmonic_ADP_Fourier.structure_id may be omitted if only
+       one _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_ANHARMONIC_ADP_FOURIER
-    _category_key.name            '_atom_site_anharmonic_ADP_Fourier.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_anharmonic_ADP_Fourier.id'
+         '_atom_site_anharmonic_ADP_Fourier.structure_id'
+
     _description_example.case
 ;
         #\#CIF_2.0
 
         # - - - - data truncated for brevity - - - -
+
+        _structure.id   "[CH~3~NH~3~][Co(COOH)~3~]"
 
         _cell.modulation_dimension        1
 
@@ -754,6 +785,18 @@ save_atom_site_anharmonic_adp_fourier.id
     _type.source                  Related
     _type.container               Single
     _type.contents                Code
+
+save_
+
+save_atom_site_anharmonic_adp_fourier.structure_id
+
+    _definition.id
+        '_atom_site_anharmonic_ADP_Fourier.structure_id'
+    _name.category_id             atom_site_anharmonic_ADP_Fourier
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -883,7 +926,7 @@ save_ATOM_SITE_ANHARMONIC_ADP_FOURIER_PARAM
     _definition.id                ATOM_SITE_ANHARMONIC_ADP_FOURIER_PARAM
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-02
+    _definition.update            2026-07-08
     _description.text
 ;
           Data items in the ATOM_SITE_ANHARMONIC_ADP_FOURIER_PARAM category
@@ -910,15 +953,25 @@ save_ATOM_SITE_ANHARMONIC_ADP_FOURIER_PARAM
           for all atoms in the group. t is an arbitrary phase, irrelevant for
           incommensurate modulated structures, but essential in the
           commensurate case (see _atom_sites_modulation.global_phase_t_).
+
+          _atom_site_anharmonic_ADP_Fourier_param.structure_id may be omitted
+          if only one _structure.id is present in the same data block.
 ;
     _name.category_id             ATOM_SITE_ANHARMONIC_ADP_FOURIER
     _name.object_id               ATOM_SITE_ANHARMONIC_ADP_FOURIER_PARAM
-    _category_key.name            '_atom_site_anharmonic_ADP_Fourier_param.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_anharmonic_ADP_Fourier_param.id'
+         '_atom_site_anharmonic_ADP_Fourier_param.structure_id'
+
     _description_example.case
 ;
         #\#CIF_2.0
 
         # - - - - data truncated for brevity - - - -
+
+        _structure.id   "[CH~3~NH~3~][Co(COOH)~3~]"
 
         _cell.modulation_dimension        1
 
@@ -1217,22 +1270,43 @@ save_atom_site_anharmonic_adp_fourier_param.sin_su
 
 save_
 
+save_atom_site_anharmonic_adp_fourier_param.structure_id
+
+    _definition.id
+        '_atom_site_anharmonic_ADP_Fourier_param.structure_id'
+    _name.category_id             atom_site_anharmonic_ADP_Fourier_param
+    _name.object_id               structure_id
+    _name.linked_item_id
+        '_atom_site_anharmonic_ADP_Fourier.structure_id'
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key_no_linked}]
+
+save_
+
 save_ATOM_SITE_ANHARMONIC_ADP_LEGENDRE
 
     _definition.id                ATOM_SITE_ANHARMONIC_ADP_LEGENDRE
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_ANHARMONIC_ADP_LEGENDRE category record
       details about the Legendre polynomials used to describe the
       modulations of the anharmonic ADP tensor elements when the atomic
       domain of a given atom is restricted by a crenel function.
+
+      _atom_site_anharmonic_ADP_Legendre.structure_id may be omitted if only
+      one _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_ANHARMONIC_ADP_LEGENDRE
-    _category_key.name            '_atom_site_anharmonic_ADP_legendre.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_anharmonic_ADP_Legendre.id'
+         '_atom_site_anharmonic_ADP_Legendre.structure_id'
 
 save_
 
@@ -1331,6 +1405,18 @@ save_atom_site_anharmonic_adp_legendre.order
     _type.contents                Integer
     _enumeration.range            0:
     _units.code                   none
+
+save_
+
+save_atom_site_anharmonic_adp_legendre.structure_id
+
+    _definition.id
+        '_atom_site_anharmonic_ADP_Legendre.structure_id'
+    _name.category_id             atom_site_anharmonic_ADP_Legendre
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -1436,7 +1522,7 @@ save_ATOM_SITE_ANHARMONIC_ADP_ORTHO
     _definition.id                ATOM_SITE_ANHARMONIC_ADP_ORTHO
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_ANHARMONIC_ADP_ORTHO category record
@@ -1445,12 +1531,18 @@ save_ATOM_SITE_ANHARMONIC_ADP_ORTHO
       anharmonic ADP tensor elements, when the atomic domain of a given
       atom is restricted by a crenel function. The functions are constructed
       selecting Fourier harmonics until the desired degree of orthogonality
-      and completeness is reached (see
-      _atom_site_occ_crenel.ortho_eps).
+      and completeness is reached (see _atom_site_occ_crenel.ortho_eps).
+
+      _atom_site_anharmonic_ADP_ortho.structure_id may be omitted if only
+      one _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_ANHARMONIC_ADP_ORTHO
-    _category_key.name            '_atom_site_anharmonic_ADP_ortho.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_anharmonic_ADP_ortho.id'
+         '_atom_site_anharmonic_ADP_ortho.structure_id'
 
 save_
 
@@ -1559,6 +1651,17 @@ save_atom_site_anharmonic_adp_ortho.id
 
 save_
 
+save_atom_site_anharmonic_adp_ortho.structure_id
+
+    _definition.id                '_atom_site_anharmonic_ADP_ortho.structure_id'
+    _name.category_id             atom_site_anharmonic_ADP_ortho
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
 save_atom_site_anharmonic_adp_ortho.tens_elem
 
     _definition.id                '_atom_site_anharmonic_ADP_ortho.tens_elem'
@@ -1660,17 +1763,24 @@ save_ATOM_SITE_ANHARMONIC_ADP_XHARM
     _definition.id                ATOM_SITE_ANHARMONIC_ADP_XHARM
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_ANHARMONIC_ADP_XHARM category record
       details about the x-harmonics used to describe the modulations of
       the anharmonic ADP tensor elements when the atomic domain of a
       given atom is restricted by a crenel function.
+
+      _atom_site_anharmonic_ADP_xharm.structure_id may be omitted if only
+      one _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_ANHARMONIC_ADP_XHARM
-    _category_key.name            '_atom_site_anharmonic_ADP_xharm.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_anharmonic_ADP_xharm.id'
+         '_atom_site_anharmonic_ADP_xharm.structure_id'
 
 save_
 
@@ -1769,6 +1879,17 @@ save_atom_site_anharmonic_adp_xharm.order
     _type.contents                Integer
     _enumeration.range            0:
     _units.code                   none
+
+save_
+
+save_atom_site_anharmonic_adp_xharm.structure_id
+
+    _definition.id                '_atom_site_anharmonic_ADP_xharm.structure_id'
+    _name.category_id             atom_site_anharmonic_ADP_xharm
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -1872,7 +1993,7 @@ save_ATOM_SITE_DISPLACE_FOURIER
     _definition.id                ATOM_SITE_DISPLACE_FOURIER
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_DISPLACE_FOURIER category record
@@ -1884,10 +2005,18 @@ save_ATOM_SITE_DISPLACE_FOURIER
       ATOM_SITE_ROT_FOURIER category. The (in general complex)
       coefficients of each Fourier component belong to the child category
       ATOM_SITE_DISPLACE_FOURIER_PARAM and may be listed separately.
+
+      _atom_site_displace_Fourier.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_DISPLACE_FOURIER
-    _category_key.name            '_atom_site_displace_Fourier.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_displace_Fourier.id'
+         '_atom_site_displace_Fourier.structure_id'
+
     _description_example.case
 ;
         #\#CIF_2.0
@@ -1895,6 +2024,8 @@ save_ATOM_SITE_DISPLACE_FOURIER
         data_I
 
         # - - - - data truncated for brevity - - - -
+
+        _structure.id   levyclaudite-(Sb)
 
         loop_
          _cell_wave_vector.seq_id
@@ -2091,6 +2222,17 @@ save_atom_site_displace_fourier.matrix_seq_id
 
 save_
 
+save_atom_site_displace_fourier.structure_id
+
+    _definition.id                '_atom_site_displace_Fourier.structure_id'
+    _name.category_id             atom_site_displace_Fourier
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
 save_atom_site_displace_fourier.wave_vector_seq_id
 
     _definition.id
@@ -2124,7 +2266,7 @@ save_ATOM_SITE_DISPLACE_FOURIER_PARAM
     _definition.id                ATOM_SITE_DISPLACE_FOURIER_PARAM
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-07-31
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_DISPLACE_FOURIER_PARAM category
@@ -2163,15 +2305,25 @@ save_ATOM_SITE_DISPLACE_FOURIER_PARAM
       Use of _atom_sites_displace_Fourier.axes_description is DEPRECATED
       and retained only for backward compatibility. Notice that in this
       case displacements were expressed in angstroms.
+
+      _atom_site_displace_Fourier_param.structure_id may be omitted if only
+      one _structure.id is present in the same data block.
 ;
     _name.category_id             ATOM_SITE_DISPLACE_FOURIER
     _name.object_id               ATOM_SITE_DISPLACE_FOURIER_PARAM
-    _category_key.name            '_atom_site_displace_Fourier_param.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_displace_Fourier_param.id'
+         '_atom_site_displace_Fourier_param.structure_id'
+
     _description_example.case
 ;
         #\#CIF_2.0
 
         data_I
+
+        _structure.id   levyclaudite-(Sb)
 
         # - - - - data truncated for brevity - - - -
 
@@ -2481,12 +2633,25 @@ save_atom_site_displace_fourier_param.sin_su
 
 save_
 
+save_atom_site_displace_fourier_param.structure_id
+
+    _definition.id
+        '_atom_site_displace_Fourier_param.structure_id'
+    _name.category_id             atom_site_displace_Fourier_param
+    _name.object_id               structure_id
+    _name.linked_item_id          '_atom_site_displace_Fourier.structure_id'
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key_no_linked}]
+
+save_
+
 save_ATOM_SITE_DISPLACE_LEGENDRE
 
     _definition.id                ATOM_SITE_DISPLACE_LEGENDRE
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2025-06-04
+    _definition.update            2026-07-08
     _description.text
 ;
       The set of harmonic functions used in the Fourier series
@@ -2529,6 +2694,9 @@ save_ATOM_SITE_DISPLACE_LEGENDRE
       belonging to the ATOM_SITES_AXES category, through
       _atom_site_displace_Legendre.matrix_seq_id.
 
+      _atom_site_displace_Legendre.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
+
       References: Petricek, V., Van Der Lee & Evain, M. (1995).
                   Acta Cryst. A51, 529-535. DOI 10.1107/S0108767395000365
                   On the Use of Crenel Functions for Occupationally Modulated
@@ -2547,10 +2715,17 @@ save_ATOM_SITE_DISPLACE_LEGENDRE
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_DISPLACE_LEGENDRE
-    _category_key.name            '_atom_site_displace_Legendre.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_displace_Legendre.id'
+         '_atom_site_displace_Legendre.structure_id'
+
     _description_example.case
 ;
         #\#CIF_2.0
+
+        _structure.id   Bi-family
 
         # - - - - data truncated for brevity - - - -
 
@@ -2789,12 +2964,23 @@ save_atom_site_displace_legendre.order
 
 save_
 
+save_atom_site_displace_legendre.structure_id
+
+    _definition.id                '_atom_site_displace_Legendre.structure_id'
+    _name.category_id             atom_site_displace_Legendre
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
 save_ATOM_SITE_DISPLACE_ORTHO
 
     _definition.id                ATOM_SITE_DISPLACE_ORTHO
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2026-06-15
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_DISPLACE_ORTHO category record
@@ -2819,15 +3005,25 @@ save_ATOM_SITE_DISPLACE_ORTHO
       information about the orthogonalized set of functions) using the
       data items defined in the categories ATOM_SITE_DISPLACE_FOURIER
       and ATOM_SITE_DISPLACE_FOURIER_PARAM.
+
+      _atom_site_displace_ortho.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_DISPLACE_ORTHO
-    _category_key.name            '_atom_site_displace_ortho.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_displace_ortho.id'
+         '_atom_site_displace_ortho.structure_id'
+
     _description_example.case
 ;
         #\#CIF_2.0
 
         # - - - - data truncated for brevity - - - -
+
+       _structure.id   "\d~1~-CoZn~7.8~"
 
         _cell.modulation_dimension               1
 
@@ -3100,12 +3296,23 @@ save_atom_site_displace_ortho.matrix_seq_id
 
 save_
 
+save_atom_site_displace_ortho.structure_id
+
+    _definition.id                '_atom_site_displace_ortho.structure_id'
+    _name.category_id             atom_site_displace_ortho
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
 save_ATOM_SITE_DISPLACE_SAWTOOTH
 
     _definition.id                ATOM_SITE_DISPLACE_SAWTOOTH
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2025-06-04
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_DISPLACE_SAWTOOTH category record
@@ -3143,6 +3350,9 @@ save_ATOM_SITE_DISPLACE_SAWTOOTH
       belonging to the ATOM_SITES_AXES category, through
       _atom_site_displace_sawtooth.matrix_seq_id.
 
+      _atom_site_displace_sawtooth.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
+
       References: Petricek, V., Dusek, M. & Palatinus, L. (2014).
                   Z. Kristallogr. 229(5), 345-352.  DOI 10.1515/zkri-2014-1737
                   Crystallographic Computing System JANA2006: General features
@@ -3160,7 +3370,11 @@ save_ATOM_SITE_DISPLACE_SAWTOOTH
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_DISPLACE_SAWTOOTH
-    _category_key.name            '_atom_site_displace_sawtooth.atom_site_label'
+
+    loop_
+      _category_key.name
+         '_atom_site_displace_sawtooth.atom_site_label'
+         '_atom_site_displace_sawtooth.structure_id'
 
     loop_
       _description_example.case
@@ -3169,6 +3383,8 @@ save_ATOM_SITE_DISPLACE_SAWTOOTH
        #\#CIF_2.0
 
        # - - - - data truncated for brevity - - - -
+
+       _structure.id   bismuth_cuprate
 
        _cell.modulation_dimension        1
 
@@ -3214,6 +3430,8 @@ save_ATOM_SITE_DISPLACE_SAWTOOTH
        # Same example using vectors
 
        # - - - - data truncated for brevity - - - -
+
+       _structure.id   bismuth-cuprate
 
        _cell.modulation_dimension        1
 
@@ -3490,6 +3708,17 @@ save_atom_site_displace_sawtooth.matrix_seq_id
 
 save_
 
+save_atom_site_displace_sawtooth.structure_id
+
+    _definition.id                '_atom_site_displace_sawtooth.structure_id'
+    _name.category_id             atom_site_displace_sawtooth
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
 save_atom_site_displace_sawtooth.w
 
     _definition.id                '_atom_site_displace_sawtooth.w'
@@ -3531,7 +3760,7 @@ save_ATOM_SITE_DISPLACE_XHARM
     _definition.id                ATOM_SITE_DISPLACE_XHARM
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-07-08
     _description.text
 ;
       The set of harmonic functions used in the Fourier series
@@ -3572,6 +3801,9 @@ save_ATOM_SITE_DISPLACE_XHARM
       belonging to the ATOM_SITES_AXES category, through
       _atom_site_displace_xharm.matrix_seq_id.
 
+      _atom_site_displace_xharm.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
+
       References: Petricek, V., Van Der Lee & Evain, M. (1995).
                   Acta Cryst. A51, 529-535. DOI 10.1107/S0108767395000365
                   On the Use of Crenel Functions for Occupationally Modulated
@@ -3590,7 +3822,12 @@ save_ATOM_SITE_DISPLACE_XHARM
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_DISPLACE_XHARM
-    _category_key.name            '_atom_site_displace_xharm.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_displace_xharm.id'
+         '_atom_site_displace_xharm.structure_id'
+
     _description_example.case
 ;
         #\#CIF_2.0
@@ -3598,6 +3835,8 @@ save_ATOM_SITE_DISPLACE_XHARM
         # - - - - data truncated for brevity - - - -
 
         _cell.modulation_dimension        1
+
+        _structure.id   tetraaquabis(sulfato)iron(III)
 
         loop_
           _atom_site.label
@@ -3844,12 +4083,23 @@ save_atom_site_displace_xharm.order
 
 save_
 
+save_atom_site_displace_xharm.structure_id
+
+    _definition.id                '_atom_site_displace_xharm.structure_id'
+    _name.category_id             atom_site_displace_xharm
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
 save_ATOM_SITE_DISPLACE_ZIGZAG
 
     _definition.id                ATOM_SITE_DISPLACE_ZIGZAG
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2025-06-04
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_DISPLACE_ZIGZAG category record
@@ -3882,15 +4132,25 @@ save_ATOM_SITE_DISPLACE_ZIGZAG
 
       For more information and references see the description of the
       ATOM_SITE_DISPLACE_SAWTOOTH category.
+
+      _atom_site_displace_zigzag.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_DISPLACE_ZIGZAG
-    _category_key.name            '_atom_site_displace_zigzag.atom_site_label'
+
+    loop_
+      _category_key.name
+         '_atom_site_displace_zigzag.atom_site_label'
+         '_atom_site_displace_zigzag.structure_id'
+
     _description_example.case
 ;
     #\#CIF_2.0
 
     # - - - - data truncated for brevity - - - -
+
+    _structure.id   lillianite
 
     _cell.modulation_dimension        1
 
@@ -4041,6 +4301,17 @@ save_atom_site_displace_zigzag.matrix_seq_id
 
     _import.get
         [{'file':templ_attr.cif  'save':transf_matrix_id}]
+
+save_
+
+save_atom_site_displace_zigzag.structure_id
+
+    _definition.id                '_atom_site_displace_zigzag.structure_id'
+    _name.category_id             atom_site_displace_zigzag
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -4656,22 +4927,11 @@ save_
 save_atom_site_fourier_wave_vector.structure_id
 
     _definition.id                '_atom_site_Fourier_wave_vector.structure_id'
-    _definition.update            2026-06-30
-    _description.text
-;
-    A code identifying the crystallographic structure associated with the
-    atom site Fourier wave vector.
-
-    This data name may be omitted if only one _structure.id is present in
-    the same data block.
-;
     _name.category_id             atom_site_Fourier_wave_vector
     _name.object_id               structure_id
-    _name.linked_item_id          '_structure.id'
-    _type.purpose                 Link
-    _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Word
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -4828,7 +5088,7 @@ save_ATOM_SITE_OCC_CRENEL
     _definition.id                ATOM_SITE_OCC_CRENEL
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2025-06-04
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_OCC_CRENEL category record
@@ -4844,15 +5104,25 @@ save_ATOM_SITE_OCC_CRENEL
 
       For more information and references see the description of the
       ATOM_SITE_DISPLACE_SAWTOOTH category.
+
+      _atom_site_occ_crenel.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_OCC_CRENEL
-    _category_key.name            '_atom_site_occ_crenel.atom_site_label'
+
+    loop_
+      _category_key.name
+         '_atom_site_occ_crenel.atom_site_label'
+         '_atom_site_occ_crenel.structure_id'
+
     _description_example.case
 ;
     #\#CIF_2.0
 
     # - - - - data truncated for brevity - - - -
+
+    _structure.id   Bi_family
 
     _cell.modulation_dimension               1
 
@@ -5001,6 +5271,17 @@ save_atom_site_occ_crenel.ortho_eps
 
 save_
 
+save_atom_site_occ_crenel.structure_id
+
+    _definition.id                '_atom_site_occ_crenel.structure_id'
+    _name.category_id             atom_site_occ_crenel
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
 save_atom_site_occ_crenel.w
 
     _definition.id                '_atom_site_occ_crenel.w'
@@ -5047,7 +5328,7 @@ save_ATOM_SITE_OCC_FOURIER
     _definition.id                ATOM_SITE_OCC_FOURIER
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_OCC_FOURIER category record details
@@ -5055,15 +5336,25 @@ save_ATOM_SITE_OCC_FOURIER
       the atom sites in a modulated structure. The (in general complex)
       coefficients of each Fourier component belong to the child category
       ATOM_SITE_OCC_FOURIER_PARAM and may be listed separately.
+
+      _atom_site_occ_Fourier.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_OCC_FOURIER
-    _category_key.name            '_atom_site_occ_Fourier.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_occ_Fourier.id'
+         '_atom_site_occ_Fourier.structure_id'
+
     _description_example.case
 ;
         #\#CIF_2.0
 
         # - - - - data truncated for brevity - - - -
+
+        _structure.id   levyclaudite-(Sb)
 
         _cell.modulation_dimension               2
 
@@ -5177,6 +5468,17 @@ save_atom_site_occ_fourier.id
 
 save_
 
+save_atom_site_occ_fourier.structure_id
+
+    _definition.id                '_atom_site_occ_Fourier.structure_id'
+    _name.category_id             atom_site_occ_Fourier
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
 save_atom_site_occ_fourier.wave_vector_seq_id
 
     _definition.id                '_atom_site_occ_Fourier.wave_vector_seq_id'
@@ -5206,7 +5508,7 @@ save_ATOM_SITE_OCC_FOURIER_PARAM
     _definition.id                ATOM_SITE_OCC_FOURIER_PARAM
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-07-31
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_OCC_FOURIER_PARAM category record
@@ -5232,15 +5534,25 @@ save_ATOM_SITE_OCC_FOURIER_PARAM
       for all atoms in the group. t is an arbitrary phase, irrelevant for
       incommensurate modulated structures, but essential in the commensurate
       case (see _atom_sites_modulation.global_phase_t_).
+
+      _atom_site_occ_Fourier_param.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             ATOM_SITE_OCC_FOURIER
     _name.object_id               ATOM_SITE_OCC_FOURIER_PARAM
-    _category_key.name            '_atom_site_occ_Fourier_param.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_occ_Fourier_param.id'
+         '_atom_site_occ_Fourier_param.structure_id'
+
     _description_example.case
 ;
         #\#CIF_2.0
 
         # - - - - data truncated for brevity - - - -
+
+        _structure.id   levyclaudite-(Sb)
 
         _cell.modulation_dimension               2
 
@@ -5527,12 +5839,24 @@ save_atom_site_occ_fourier_param.sin_su
 
 save_
 
+save_atom_site_occ_fourier_param.structure_id
+
+    _definition.id                '_atom_site_occ_Fourier_param.structure_id'
+    _name.category_id             atom_site_occ_Fourier_param
+    _name.object_id               structure_id
+    _name.linked_item_id          '_atom_site_occ_Fourier.structure_id'
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key_no_linked}]
+
+save_
+
 save_ATOM_SITE_OCC_LEGENDRE
 
     _definition.id                ATOM_SITE_OCC_LEGENDRE
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_OCC_LEGENDRE category record
@@ -5540,10 +5864,17 @@ save_ATOM_SITE_OCC_LEGENDRE
       modulations when the atomic domain of a given atom or rigid group
       is restricted  by a crenel function. See ATOM_SITE_DISPLACE_LEGENDRE
       for more detailed information.
+
+      _atom_site_occ_Legendre.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_OCC_LEGENDRE
-    _category_key.name            '_atom_site_occ_Legendre.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_occ_Legendre.id'
+         '_atom_site_occ_Legendre.structure_id'
 
 save_
 
@@ -5644,12 +5975,23 @@ save_atom_site_occ_legendre.order
 
 save_
 
+save_atom_site_occ_legendre.structure_id
+
+    _definition.id                '_atom_site_occ_Legendre.structure_id'
+    _name.category_id             atom_site_occ_Legendre
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
 save_ATOM_SITE_OCC_ORTHO
 
     _definition.id                ATOM_SITE_OCC_ORTHO
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-07-08
     _description.text
 ;
 
@@ -5666,10 +6008,17 @@ save_ATOM_SITE_OCC_ORTHO
       information about the orthogonalized functions) using the data items
       defined in the categories ATOM_SITE_OCC_FOURIER and
       ATOM_SITE_OCC_FOURIER_PARAM.
+
+      _atom_site_occ_ortho.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_OCC_ORTHO
-    _category_key.name            '_atom_site_occ_ortho.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_occ_ortho.id'
+         '_atom_site_occ_ortho.structure_id'
 
 save_
 
@@ -5773,12 +6122,23 @@ save_atom_site_occ_ortho.id
 
 save_
 
+save_atom_site_occ_ortho.structure_id
+
+    _definition.id                '_atom_site_occ_ortho.structure_id'
+    _name.category_id             atom_site_occ_ortho
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
 save_ATOM_SITE_OCC_XHARM
 
     _definition.id                ATOM_SITE_OCC_XHARM
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_OCC_XHARM category record details about
@@ -5786,10 +6146,17 @@ save_ATOM_SITE_OCC_XHARM
       the atomic domain of a given atom or rigid group is restricted by
       a crenel function.  See ATOM_SITE_DISPLACE_XHARM for more detailed
       information.
+
+      _atom_site_occ_xharm.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_OCC_XHARM
-    _category_key.name            '_atom_site_occ_xharm.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_occ_xharm.id'
+         '_atom_site_occ_xharm.structure_id'
 
 save_
 
@@ -5890,12 +6257,23 @@ save_atom_site_occ_xharm.order
 
 save_
 
+save_atom_site_occ_xharm.structure_id
+
+    _definition.id                '_atom_site_occ_xharm.structure_id'
+    _name.category_id             atom_site_occ_xharm
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
 save_ATOM_SITE_PHASON
 
     _definition.id                ATOM_SITE_PHASON
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_PHASON category record details
@@ -5903,10 +6281,17 @@ save_ATOM_SITE_PHASON
       correction is intended to be overall, some refinement programs
       (for example, JANA) allow for this (theoretically dubious)
       atom-dependent phason treatment.
+
+      _atom_site_phason.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_PHASON
-    _category_key.name            '_atom_site_phason.atom_site_label'
+
+    loop_
+      _category_key.name
+         '_atom_site_phason.atom_site_label'
+         '_atom_site_phason.structure_id'
 
 save_
 
@@ -6008,12 +6393,23 @@ save_atom_site_phason.formula
 
 save_
 
+save_atom_site_phason.structure_id
+
+    _definition.id                '_atom_site_phason.structure_id'
+    _name.category_id             atom_site_phason
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
 save_ATOM_SITE_ROT_FOURIER
 
     _definition.id                ATOM_SITE_ROT_FOURIER
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2025-06-04
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_ROT_FOURIER category record details
@@ -6024,15 +6420,25 @@ save_ATOM_SITE_ROT_FOURIER
       general complex) coefficients of each Fourier component belong
       to the child category ATOM_SITE_ROT_FOURIER_PARAM and may be listed
       separately.
+
+      _atom_site_rot_Fourier.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_ROT_FOURIER
-    _category_key.name            '_atom_site_rot_Fourier.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_rot_Fourier.id'
+         '_atom_site_rot_Fourier.structure_id'
+
     _description_example.case
 ;
         #\#CIF_2.0
 
         # - - - - data truncated for brevity - - - -
+
+        _structure.id   "4,4'-Dichlorobiphenyl Sulfone"
 
         _space_group.crystal_system             monoclinic
         _superspace_group.name_WJJ               'P:I2/a:s -1'
@@ -6316,6 +6722,17 @@ save_atom_site_rot_fourier.matrix_seq_id
 
 save_
 
+save_atom_site_rot_fourier.structure_id
+
+    _definition.id                '_atom_site_rot_Fourier.structure_id'
+    _name.category_id             atom_site_rot_Fourier
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
 save_atom_site_rot_fourier.wave_vector_seq_id
 
     _definition.id                '_atom_site_rot_Fourier.wave_vector_seq_id'
@@ -6345,7 +6762,7 @@ save_ATOM_SITE_ROT_FOURIER_PARAM
     _definition.id                ATOM_SITE_ROT_FOURIER_PARAM
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2025-06-04
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_ROT_FOURIER_PARAM category record
@@ -6383,15 +6800,25 @@ save_ATOM_SITE_ROT_FOURIER_PARAM
 
       Use of _atom_sites_rot_Fourier.axes_description is DEPRECATED and
       retained only by for backward compatibility.
+
+      _atom_site_rot_Fourier_param.structure_id may be omitted if only
+      one _structure.id is present in the same data block.
 ;
     _name.category_id             ATOM_SITE_ROT_FOURIER
     _name.object_id               ATOM_SITE_ROT_FOURIER_PARAM
-    _category_key.name            '_atom_site_rot_Fourier_param.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_rot_Fourier_param.id'
+         '_atom_site_rot_Fourier_param.structure_id'
+
     _description_example.case
 ;
         #\#CIF_2.0
 
         # - - - - data truncated for brevity - - - -
+
+        _structure.id   "4,4'-Dichlorobiphenyl Sulfone"
 
         _space_group.crystal_system             monoclinic
         _superspace_group.name_WJJ              'P:I2/a:s -1'
@@ -6819,12 +7246,24 @@ save_atom_site_rot_fourier_param.sin_su
 
 save_
 
+save_atom_site_rot_fourier_param.structure_id
+
+    _definition.id                '_atom_site_rot_Fourier_param.structure_id'
+    _name.category_id             atom_site_rot_Fourier_param
+    _name.object_id               structure_id
+    _name.linked_item_id          '_atom_site_rot_Fourier.structure_id'
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key_no_linked}]
+
+save_
+
 save_ATOM_SITE_ROT_LEGENDRE
 
     _definition.id                ATOM_SITE_ROT_LEGENDRE
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_ROT_LEGENDRE category record
@@ -6834,10 +7273,17 @@ save_ATOM_SITE_ROT_LEGENDRE
       category would only include the rotational part of the modulation.
       The translational part would appear in a separate list of items
       belonging to the ATOM_SITE_DISPLACE_LEGENDRE category.
+
+      _atom_site_rot_Legendre.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_ROT_LEGENDRE
-    _category_key.name            '_atom_site_rot_Legendre.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_rot_Legendre.id'
+         '_atom_site_rot_Legendre.structure_id'
 
 save_
 
@@ -7007,12 +7453,23 @@ save_atom_site_rot_legendre.order
 
 save_
 
+save_atom_site_rot_legendre.structure_id
+
+    _definition.id                '_atom_site_rot_Legendre.structure_id'
+    _name.category_id             atom_site_rot_Legendre
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
 save_ATOM_SITE_ROT_ORTHO
 
     _definition.id                ATOM_SITE_ROT_ORTHO
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_ROT_ORTHO category record
@@ -7030,10 +7487,17 @@ save_ATOM_SITE_ROT_ORTHO
       information about the orthogonalized functions) using the data
       items defined in the categories ATOM_SITE_ROT_FOURIER and
       ATOM_SITE_ROT_FOURIER_PARAM.
+
+      _atom_site_rot_ortho.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_ROT_ORTHO
-    _category_key.name            '_atom_site_rot_ortho.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_rot_ortho.id'
+         '_atom_site_rot_ortho.structure_id'
 
 save_
 
@@ -7206,12 +7670,23 @@ save_atom_site_rot_ortho.matrix_seq_id
 
 save_
 
+save_atom_site_rot_ortho.structure_id
+
+    _definition.id                '_atom_site_rot_ortho.structure_id'
+    _name.category_id             atom_site_rot_ortho
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
 save_ATOM_SITE_ROT_SAWTOOTH
 
     _definition.id                ATOM_SITE_ROT_SAWTOOTH
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2025-06-04
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_DISPLACE_SAWTOOTH category record
@@ -7236,10 +7711,17 @@ save_ATOM_SITE_ROT_SAWTOOTH
 
       For more information and references see the description of the
       ATOM_SITE_DISPLACE_SAWTOOTH category.
+
+      _atom_site_rot_sawtooth.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_ROT_SAWTOOTH
-    _category_key.name            '_atom_site_rot_sawtooth.atom_site_label'
+
+    loop_
+      _category_key.name
+         '_atom_site_rot_sawtooth.atom_site_label'
+         '_atom_site_rot_sawtooth.structure_id'
 
 save_
 
@@ -7494,6 +7976,17 @@ save_atom_site_rot_sawtooth.matrix_seq_id
 
 save_
 
+save_atom_site_rot_sawtooth.structure_id
+
+    _definition.id                '_atom_site_rot_sawtooth.structure_id'
+    _name.category_id             atom_site_rot_sawtooth
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
 save_atom_site_rot_sawtooth.w
 
     _definition.id                '_atom_site_rot_sawtooth.w'
@@ -7535,7 +8028,7 @@ save_ATOM_SITE_ROT_XHARM
     _definition.id                ATOM_SITE_ROT_XHARM
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_ROT_XHARM category record
@@ -7545,10 +8038,17 @@ save_ATOM_SITE_ROT_XHARM
       category would only include the rotational part of the modulation.
       The translational part would appear in a separate list of items
       belonging to the ATOM_SITE_DISPLACE_XHARM category.
+
+      _atom_site_rot_xharm.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_ROT_XHARM
-    _category_key.name            '_atom_site_rot_xharm.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_rot_xharm.id'
+         '_atom_site_rot_xharm.structure_id'
 
 save_
 
@@ -7718,12 +8218,23 @@ save_atom_site_rot_xharm.order
 
 save_
 
+save_atom_site_rot_xharm.structure_id
+
+    _definition.id                '_atom_site_rot_xharm.structure_id'
+    _name.category_id             atom_site_rot_xharm
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
 save_ATOM_SITE_ROT_ZIGZAG
 
     _definition.id                ATOM_SITE_ROT_ZIGZAG
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2025-06-04
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_ROT_ZIGZAG category record
@@ -7750,10 +8261,17 @@ save_ATOM_SITE_ROT_ZIGZAG
 
       For more information and references see the description of the
       ATOM_SITE_DISPLACE_SAWTOOTH category.
+
+      _atom_site_rot_zigzag.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_ROT_ZIGZAG
-    _category_key.name            '_atom_site_rot_zigzag.atom_site_label'
+
+    loop_
+      _category_key.name
+         '_atom_site_rot_zigzag.atom_site_label'
+         '_atom_site_rot_zigzag.structure_id'
 
 save_
 
@@ -7867,6 +8385,17 @@ save_atom_site_rot_zigzag.matrix_seq_id
 
 save_
 
+save_atom_site_rot_zigzag.structure_id
+
+    _definition.id                '_atom_site_rot_zigzag.structure_id'
+    _name.category_id             atom_site_rot_zigzag
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
 save_atom_site_rot_zigzag.w
 
     _definition.id                '_atom_site_rot_zigzag.w'
@@ -7907,7 +8436,7 @@ save_ATOM_SITE_U_FOURIER
     _definition.id                ATOM_SITE_U_FOURIER
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_U_FOURIER category record details
@@ -7915,15 +8444,25 @@ save_ATOM_SITE_U_FOURIER
       harmonic ADPs in a modulated structure. The (in general complex)
       coefficients of each Fourier component belong to the child
       ATOM_SITE_U_FOURIER_PARAM category and may be listed separately.
+
+      _atom_site_U_Fourier.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_U_FOURIER
-    _category_key.name            '_atom_site_U_Fourier.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_U_Fourier.id'
+         '_atom_site_U_Fourier.structure_id'
+
     _description_example.case
 ;
         #\#CIF_2.0
 
         # - - - - data truncated for brevity - - - -
+
+        _structure.id   levyclaudite-(Sb)
 
         _cell.modulation_dimension               2
 
@@ -8062,6 +8601,17 @@ save_atom_site_u_fourier.id
 
 save_
 
+save_atom_site_u_fourier.structure_id
+
+    _definition.id                '_atom_site_U_Fourier.structure_id'
+    _name.category_id             atom_site_U_Fourier
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
 save_atom_site_u_fourier.tens_elem
 
     _definition.id                '_atom_site_U_Fourier.tens_elem'
@@ -8122,7 +8672,7 @@ save_ATOM_SITE_U_FOURIER_PARAM
     _definition.id                ATOM_SITE_U_FOURIER_PARAM
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-07-31
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_U_FOURIER_PARAM category record details
@@ -8151,15 +8701,25 @@ save_ATOM_SITE_U_FOURIER_PARAM
 
       Fourier coefficients of the harmonic ADPs must be expressed in
       angstroms squared.
+
+      _atom_site_U_Fourier_param.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             ATOM_SITE_U_FOURIER
     _name.object_id               ATOM_SITE_U_FOURIER_PARAM
-    _category_key.name            '_atom_site_U_Fourier_param.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_U_Fourier_param.id'
+         '_atom_site_U_Fourier_param.structure_id'
+
     _description_example.case
 ;
         #\#CIF_2.0
 
         # - - - - data truncated for brevity - - - -
+
+        _structure.id   levyclaudite-(Sb)
 
         _cell.modulation_dimension               2
 
@@ -8488,12 +9048,24 @@ save_atom_site_u_fourier_param.sin_su
 
 save_
 
+save_atom_site_u_fourier_param.structure_id
+
+    _definition.id                '_atom_site_U_Fourier_param.structure_id'
+    _name.category_id             atom_site_U_Fourier_param
+    _name.object_id               structure_id
+    _name.linked_item_id          '_atom_site_U_Fourier.structure_id'
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key_no_linked}]
+
+save_
+
 save_ATOM_SITE_U_LEGENDRE
 
     _definition.id                ATOM_SITE_U_LEGENDRE
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_U_LEGENDRE category record
@@ -8501,15 +9073,25 @@ save_ATOM_SITE_U_LEGENDRE
       harmonic ADP modulations when the atomic domain of a given atom is
       restricted by a crenel function. See ATOM_SITE_DISPLACE_LEGENDRE
       for more detailed information.
+
+      _atom_site_U_Legendre.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_U_LEGENDRE
-    _category_key.name            '_atom_site_u_Legendre.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_U_Legendre.id'
+         '_atom_site_U_Legendre.structure_id'
+
     _description_example.case
 ;
         #\#CIF_2.0
 
         # - - - - data truncated for brevity - - - -
+
+        _structure.id   "YZn_{5+x}"
 
         _cell.modulation_dimension               1
 
@@ -8692,6 +9274,17 @@ save_atom_site_u_legendre.order
 
 save_
 
+save_atom_site_u_legendre.structure_id
+
+    _definition.id                '_atom_site_U_Legendre.structure_id'
+    _name.category_id             atom_site_U_Legendre
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
 save_atom_site_u_legendre.tens_elem
 
     _definition.id                '_atom_site_U_Legendre.tens_elem'
@@ -8728,7 +9321,7 @@ save_ATOM_SITE_U_ORTHO
     _definition.id                ATOM_SITE_U_ORTHO
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_U_ORTHO category record
@@ -8744,10 +9337,17 @@ save_ATOM_SITE_U_ORTHO
       information about the orthogonalized functions) using the data items
       defined in the categories ATOM_SITE_U_FOURIER and
       ATOM_SITE_U_FOURIER_PARAM.
+
+      _atom_site_U_ortho.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_U_ORTHO
-    _category_key.name            '_atom_site_U_ortho.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_U_ortho.id'
+         '_atom_site_U_ortho.structure_id'
 
 save_
 
@@ -8851,6 +9451,17 @@ save_atom_site_u_ortho.id
 
 save_
 
+save_atom_site_u_ortho.structure_id
+
+    _definition.id                '_atom_site_U_ortho.structure_id'
+    _name.category_id             atom_site_U_ortho
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
 save_atom_site_u_ortho.tens_elem
 
     _definition.id                '_atom_site_U_ortho.tens_elem'
@@ -8888,22 +9499,32 @@ save_ATOM_SITE_U_XHARM
     _definition.id                ATOM_SITE_U_XHARM
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-07-08
     _description.text
 ;
       Data items in the ATOM_SITE_U_XHARM category record details about
       the x-harmonics used to describe the harmonic ADP modulations when
       the atomic domain of a given atom is restricted by a crenel
       function. See ATOM_SITE_DISPLACE_XHARM for more detailed information.
+
+      _atom_site_U_xharm.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_U_XHARM
-    _category_key.name            '_atom_site_U_xharm.id'
+
+    loop_
+      _category_key.name
+         '_atom_site_U_xharm.id'
+         '_atom_site_U_xharm.structure_id'
+
     _description_example.case
 ;
         #\#CIF_2.0
 
         # - - - - data truncated for brevity - - - -
+
+        __structure.id   "(C~5~H~7~N~2~)[Fe^III^(H~2~O)~4~(SO~4~)~2~]"
 
         _cell.modulation_dimension        1
 
@@ -9092,6 +9713,17 @@ save_atom_site_u_xharm.order
     _type.contents                Integer
     _enumeration.range            0:
     _units.code                   none
+
+save_
+
+save_atom_site_u_xharm.structure_id
+
+    _definition.id                '_atom_site_U_xharm.structure_id'
+    _name.category_id             atom_site_U_xharm
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -18710,7 +19342,7 @@ save_
         2024-12-12
         Technical fixes (JRH)
 ;
-         3.2.5                    2026-06-30
+         3.2.5                    2026-07-08
 ;
         _SPECIAL_FUNC categories, replaced by:
         _DISPLACE_SAWTOOTH
@@ -18820,4 +19452,40 @@ save_
 
         Changed the lower enumeration range of _atom_sites_axes.matrix_seq_id
         from 0 to 1.
+
+        2026-07-08
+        Added _structure.id linked keys to:
+        ATOM_SITE_ANHARMONIC_ADP
+        ATOM_SITE_DISPLACE_SAWTOOTH
+        ATOM_SITE_DISPLACE_ZIGZAG
+        ATOM_SITE_OCC_CRENEL
+        ATOM_SITE_PHASON
+        ATOM_SITE_ROT_SAWTOOTH
+        ATOM_SITE_ROT_ZIGZAG
+
+        ATOM_SITE_ANHARMONIC_ADP_FOURIER
+        ATOM_SITE_ANHARMONIC_ADP_FOURIER_PARAM
+        ATOM_SITE_ANHARMONIC_ADP_LEGENDRE
+        ATOM_SITE_ANHARMONIC_ADP_ORTHO
+        ATOM_SITE_ANHARMONIC_ADP_XHARM
+        ATOM_SITE_DISPLACE_FOURIER
+        ATOM_SITE_DISPLACE_FOURIER_PARAM
+        ATOM_SITE_DISPLACE_LEGENDRE
+        ATOM_SITE_DISPLACE_ORTHO
+        ATOM_SITE_DISPLACE_XHARM
+        ATOM_SITE_OCC_FOURIER
+        ATOM_SITE_OCC_FOURIER_PARAM
+        ATOM_SITE_OCC_LEGENDRE
+        ATOM_SITE_OCC_ORTHO
+        ATOM_SITE_OCC_XHARM
+        ATOM_SITE_ROT_FOURIER
+        ATOM_SITE_ROT_FOURIER_PARAM
+        ATOM_SITE_ROT_LEGENDRE
+        ATOM_SITE_ROT_ORTHO
+        ATOM_SITE_ROT_XHARM
+        ATOM_SITE_U_FOURIER
+        ATOM_SITE_U_FOURIER_PARAM
+        ATOM_SITE_U_LEGENDRE
+        ATOM_SITE_U_ORTHO
+        ATOM_SITE_U_XHARM
 ;
