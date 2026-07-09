@@ -25,7 +25,7 @@ data_CIF_MS
     _dictionary.formalism         Modulated
     _dictionary.class             Instance
     _dictionary.version           3.2.5
-    _dictionary.date              2026-06-30
+    _dictionary.date              2026-07-06
     _dictionary.uri               http://www.iucr.org/cif/dic/cif_ms.dic
     _dictionary.ddl_conformance   4.2.0
     _dictionary.licensing_SPDX    CC-BY-4.0
@@ -10338,21 +10338,30 @@ save_CELL_SUBSYSTEM
     _definition.id                CELL_SUBSYSTEM
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-07-06
     _description.text
 ;
       Data items in the CELL_SUBSYSTEM category record details about
       the crystallographic cell parameters of each subsystem present in
       a composite.
+
+      _cell_subsystem.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               CELL_SUBSYSTEM
-    _category_key.name            '_cell_subsystem.code'
+
+    loop_
+      _category_key.name
+         '_cell_subsystem.code'
+         '_cell_subsystem.structure_id'
+
     _description_example.case
 ;
     #\#CIF_2.0
 
     # - - - - data truncated for brevity - - - -
+    _structure.id   Sr14/11CoO3
 
     _cell.modulation_dimension               1
 
@@ -10413,12 +10422,10 @@ save_cell_subsystem.code
 
     _definition.id                '_cell_subsystem.code'
     _alias.definition_id          '_cell_subsystem_code'
-    _definition.update            2014-06-27
+    _definition.update            2026-07-06
     _description.text
 ;
-      The code identifying uniquely a certain composite subsystem.
-      This code is used to identify the data blocks that contain
-      the structural information associated with the subsystem.
+      The code uniquely identifying a certain composite subsystem.
 ;
     _name.category_id             cell_subsystem
     _name.object_id               code
@@ -10439,7 +10446,7 @@ save_cell_subsystem.description
 ;
       Description of each subsystem defining a composite structurally.
       The number of definitions must match the number given in
-      _cell_subsystems_number.
+      _cell_subsystems.number.
 ;
     _name.category_id             cell_subsystem
     _name.object_id               description
@@ -13465,12 +13472,42 @@ save_cell_subsystem.matrix_w_9_9
 
 save_
 
+save_cell_subsystem.structure_id
+
+    _definition.id                '_cell_subsystem.structure_id'
+    _name.category_id             cell_subsystem
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
+save_cell_subsystem.subsystems_id
+
+    _definition.id                '_cell_subsystem.subsystems_id'
+    _definition.update            2026-07-06
+    _description.text
+;
+    A code which identifies the cell subsystems information applicable
+    to this subsystem.
+;
+    _name.category_id             cell_subsystem
+    _name.object_id               subsystems_id
+    _name.linked_item_id          '_cell_subsystems.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_CELL_SUBSYSTEMS
 
     _definition.id                CELL_SUBSYSTEMS
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2016-11-17
+    _definition.update            2026-07-06
     _description.text
 ;
       Data items in the CELL_SUBSYSTEMS category describe overall aspects
@@ -13478,6 +13515,25 @@ save_CELL_SUBSYSTEMS
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               CELL_SUBSYSTEMS
+    _category_key.name            '_cell_subsystems.id'
+
+save_
+
+save_cell_subsystems.id
+
+    _definition.id                '_cell_subsystems.id'
+    _definition.update            2026-07-06
+    _description.text
+;
+    Unique identifier for the overall aspects of the subsystems present
+    in a composite.
+;
+    _name.category_id             cell_subsystems
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
@@ -18710,7 +18766,7 @@ save_
         2024-12-12
         Technical fixes (JRH)
 ;
-         3.2.5                    2026-06-30
+         3.2.5                    2026-07-06
 ;
         _SPECIAL_FUNC categories, replaced by:
         _DISPLACE_SAWTOOTH
@@ -18820,4 +18876,10 @@ save_
 
         Changed the lower enumeration range of _atom_sites_axes.matrix_seq_id
         from 0 to 1.
+
+        2026-07-06
+
+        Added _cell_subsystem.structure_id as linked category key.
+        Added _cell_subsystem.subsystems_id as linked non-key data name
+        Added _cell_subsystems.id as unique category key
 ;
