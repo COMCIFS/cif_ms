@@ -550,7 +550,8 @@ save_atom_site_anharmonic_adp.structure_id
     _name.category_id             atom_site_anharmonic_ADP
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -794,7 +795,8 @@ save_atom_site_anharmonic_adp_fourier.structure_id
     _name.category_id             atom_site_anharmonic_ADP_Fourier
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -1275,7 +1277,8 @@ save_atom_site_anharmonic_adp_fourier_param.structure_id
     _name.category_id             atom_site_anharmonic_ADP_Fourier_param
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -1410,7 +1413,8 @@ save_atom_site_anharmonic_adp_legendre.structure_id
     _name.category_id             atom_site_anharmonic_ADP_Legendre
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -1651,7 +1655,8 @@ save_atom_site_anharmonic_adp_ortho.structure_id
     _name.category_id             atom_site_anharmonic_ADP_ortho
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -1881,7 +1886,8 @@ save_atom_site_anharmonic_adp_xharm.structure_id
     _name.category_id             atom_site_anharmonic_ADP_xharm
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -2220,7 +2226,8 @@ save_atom_site_displace_fourier.structure_id
     _name.category_id             atom_site_displace_Fourier
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -2631,7 +2638,8 @@ save_atom_site_displace_fourier_param.structure_id
     _name.category_id             atom_site_displace_Fourier_param
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -2959,7 +2967,8 @@ save_atom_site_displace_legendre.structure_id
     _name.category_id             atom_site_displace_Legendre
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -3290,7 +3299,8 @@ save_atom_site_displace_ortho.structure_id
     _name.category_id             atom_site_displace_ortho
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -3701,7 +3711,8 @@ save_atom_site_displace_sawtooth.structure_id
     _name.category_id             atom_site_displace_sawtooth
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -4075,7 +4086,8 @@ save_atom_site_displace_xharm.structure_id
     _name.category_id             atom_site_displace_xharm
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -4295,7 +4307,8 @@ save_atom_site_displace_zigzag.structure_id
     _name.category_id             atom_site_displace_zigzag
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -4914,7 +4927,8 @@ save_atom_site_fourier_wave_vector.structure_id
     _name.category_id             atom_site_Fourier_wave_vector
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -5260,7 +5274,8 @@ save_atom_site_occ_crenel.structure_id
     _name.category_id             atom_site_occ_crenel
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -5456,7 +5471,8 @@ save_atom_site_occ_fourier.structure_id
     _name.category_id             atom_site_occ_Fourier
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -5826,7 +5842,8 @@ save_atom_site_occ_fourier_param.structure_id
     _name.category_id             atom_site_occ_Fourier_param
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -5960,7 +5977,8 @@ save_atom_site_occ_legendre.structure_id
     _name.category_id             atom_site_occ_Legendre
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -6106,7 +6124,8 @@ save_atom_site_occ_ortho.structure_id
     _name.category_id             atom_site_occ_ortho
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -6240,7 +6259,8 @@ save_atom_site_occ_xharm.structure_id
     _name.category_id             atom_site_occ_xharm
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -6375,7 +6395,8 @@ save_atom_site_phason.structure_id
     _name.category_id             atom_site_phason
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -6703,7 +6724,8 @@ save_atom_site_rot_fourier.structure_id
     _name.category_id             atom_site_rot_Fourier
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -7226,7 +7248,8 @@ save_atom_site_rot_fourier_param.structure_id
     _name.category_id             atom_site_rot_Fourier_param
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -7431,7 +7454,8 @@ save_atom_site_rot_legendre.structure_id
     _name.category_id             atom_site_rot_Legendre
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -7647,7 +7671,8 @@ save_atom_site_rot_ortho.structure_id
     _name.category_id             atom_site_rot_ortho
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -7952,7 +7977,8 @@ save_atom_site_rot_sawtooth.structure_id
     _name.category_id             atom_site_rot_sawtooth
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -8193,7 +8219,8 @@ save_atom_site_rot_xharm.structure_id
     _name.category_id             atom_site_rot_xharm
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -8359,7 +8386,8 @@ save_atom_site_rot_zigzag.structure_id
     _name.category_id             atom_site_rot_zigzag
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -8574,7 +8602,8 @@ save_atom_site_u_fourier.structure_id
     _name.category_id             atom_site_U_Fourier
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -9020,7 +9049,8 @@ save_atom_site_u_fourier_param.structure_id
     _name.category_id             atom_site_U_Fourier_param
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -9244,7 +9274,8 @@ save_atom_site_u_legendre.structure_id
     _name.category_id             atom_site_U_Legendre
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -9420,7 +9451,8 @@ save_atom_site_u_ortho.structure_id
     _name.category_id             atom_site_U_ortho
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -9684,7 +9716,8 @@ save_atom_site_u_xharm.structure_id
     _name.category_id             atom_site_U_xharm
     _name.object_id               structure_id
 
-    _import.get                   [{'file':templ_attr.cif  'save':structure_id}]
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
