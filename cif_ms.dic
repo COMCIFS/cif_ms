@@ -892,7 +892,7 @@ save_ATOM_SITE_ANHARMONIC_ADP_FOURIER_PARAM
           in a modulated structure. The Fourier components are defined in
           the parent category ATOM_SITE_ANHARMONIC_ADP_FOURIER. Notice that
           items in this category may be listed together with those of the
-          ATOM_SITE_ANHARMONIC_ADP_FOURIER  category. To simplify the
+          ATOM_SITE_ANHARMONIC_ADP_FOURIER category. To simplify the
           description, below is explained the one-dimensional case.
 
           The modulation of the anharmonic ADP tensor elements (listed under
@@ -1468,7 +1468,7 @@ save_atom_site_anharmonic_adp_ortho.atom_site_label
       in _atom_site.label.
 
       Notice that the global results could also be expressed (losing
-      information about the orthogonalized functions )using the data items
+      information about the orthogonalized functions) using the data items
       defined in the categories ATOM_SITE_ANHARMONIC_ADP_FOURIER and
       ATOM_SITE_ANHARMONIC_ADP_FOURIER_PARAM.
 ;
@@ -1664,7 +1664,7 @@ save_ATOM_SITE_ANHARMONIC_ADP_XHARM
     _description.text
 ;
       Data items in the ATOM_SITE_ANHARMONIC_ADP_XHARM category record
-      details about the x-harmonics used to describe the  modulations of
+      details about the x-harmonics used to describe the modulations of
       the anharmonic ADP tensor elements when the atomic domain of a
       given atom is restricted by a crenel function.
 ;
@@ -2499,7 +2499,7 @@ save_ATOM_SITE_DISPLACE_LEGENDRE
       use orthogonal or orthogonalized sets of functions defined
       within the Crenel interval. This procedure is more robust than
       the orthogonalization of harmonics described in
-      *_ORTHO. categories. Moreover these sets of functions are
+      *_ORTHO categories. Moreover these sets of functions are
       complete. Two different sets of orthogonal or orthogonalized
       functions have been implemented in the package JANA (Petricek et
       al., 2016, Petricek et al., 2023): Legendre polynomials and the
@@ -3544,7 +3544,7 @@ save_ATOM_SITE_DISPLACE_XHARM
       them is to use orthogonal or orthogonalized sets of functions
       defined within the Crenel interval. This procedure is more
       robust than the orthogonalization of harmonics described in
-      *_ORTHO. categories. Moreover these sets of functions are
+      *_ORTHO categories. Moreover these sets of functions are
       complete. Two different sets of orthogonal or orthogonalized
       functions have been implemented in JANA (Petricek et al., 2023):
       Legendre polynomials and the so-called x-harmonics. x-harmonic
@@ -4084,7 +4084,7 @@ save_ATOM_SITE_FOURIER_WAVE_VECTOR
     _definition.id                ATOM_SITE_FOURIER_WAVE_VECTOR
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-06-30
     _description.text
 ;
       Data items in the ATOM_SITE_FOURIER_WAVE_VECTOR category record
@@ -4111,10 +4111,16 @@ save_ATOM_SITE_FOURIER_WAVE_VECTOR
       the value of _atom_site_Fourier_wave_vector.q_coeff_seq_id matching
       the corresponding value of _cell_wave_vector.seq_id.
 
+      _atom_site_Fourier_wave_vector.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITE_FOURIER_WAVE_VECTOR
-    _category_key.name            '_atom_site_Fourier_wave_vector.seq_id'
+
+    loop_
+      _category_key.name
+         '_atom_site_Fourier_wave_vector.seq_id'
+         '_atom_site_Fourier_wave_vector.structure_id'
 
 save_
 
@@ -4535,7 +4541,7 @@ save_atom_site_fourier_wave_vector.q_coeff
       The list of coefficients that express a given k as a linear combination
       of the _cell.modulation_dimension independent wave vectors given in
       CELL_WAVE_VECTOR category. The enumeration of the independent wave
-      vectors (1,2, ...,9) is given by thes value of
+      vectors (1,2, ...,9) is given by the value of
       _atom_site_Fourier_wave_vector.q_coeff_seq_id matching the
       corresponding value of _cell_wave_vector.seq_id
 ;
@@ -4566,7 +4572,7 @@ save_atom_site_fourier_wave_vector.q_coeff
                                m.q5_coeff, m.q6_coeff, m.q7_coeff, m.q8_coeff,\
                                m.q9_coeff]
 
-         #Matrix dimension is adjusted here here
+         #Matrix dimension is adjusted here
 
          _atom_site_Fourier_wave_vector.q_coeff =                             \
             temp_Fourier_wave_vector.q_coeff[0:_cell.modulation_dimension - 1]
@@ -4587,7 +4593,7 @@ save_atom_site_fourier_wave_vector.q_coeff_seq_id
       Fourier wave vector as k=n(1)q(1)+...+n(p)q(p), where p is given
       by _cell.modulation_dimension. In the case of composites these wave
       vectors are expressed with respect to the three-dimensional reciprocal
-      basis of each subsystem (see _cell_subsystem.matrix_W_).The codes
+      basis of each subsystem (see _cell_subsystem.matrix_W_). The codes
       must match those given in _cell_wave_vector.seq_id.
 ;
     _name.category_id             atom_site_Fourier_wave_vector
@@ -4617,7 +4623,7 @@ save_atom_site_fourier_wave_vector.q_coeff_seq_id
                   m.q4_coeff_seq_id, m.q5_coeff_seq_id, m.q6_coeff_seq_id,    \
                   m.q7_coeff_seq_id, m.q8_coeff_seq_id, m.q9_coeff_seq_id ]
 
-         #Matrix dimension is adjusted here here
+         #Matrix dimension is adjusted here
 
          _atom_site_Fourier_wave_vector.q_coeff_seq_id =                      \
          temp_Fourier_wave_vector.q_coeff_seq_id[0:_cell.modulation_dimension \
@@ -4644,6 +4650,28 @@ save_atom_site_fourier_wave_vector.seq_id
     _type.contents                Integer
     _enumeration.range            1:
     _units.code                   none
+
+save_
+
+save_atom_site_fourier_wave_vector.structure_id
+
+    _definition.id                '_atom_site_Fourier_wave_vector.structure_id'
+    _definition.update            2026-06-30
+    _description.text
+;
+    A code identifying the crystallographic structure associated with the
+    atom site Fourier wave vector.
+
+    This data name may be omitted if only one _structure.id is present in
+    the same data block.
+;
+    _name.category_id             atom_site_Fourier_wave_vector
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
@@ -4959,8 +4987,8 @@ save_atom_site_occ_crenel.ortho_eps
       contains such values. Empirical tests indicate that a default value of
       0.95 warrants reasonable results. The orthogonalized functions and the
       corresponding refined amplitudes are defined in the categories:
-      ATOM_SITES_ORTHO., ATOM_SITE_DISPLACE_ORTHO., ATOM_SITE_OCC_ORTHO.,
-      ATOM_SITE_ROT_ORTHO. and ATOM_SITE_U_ORTHO.
+      ATOM_SITES_ORTHO, ATOM_SITE_DISPLACE_ORTHO, ATOM_SITE_OCC_ORTHO,
+      ATOM_SITE_ROT_ORTHO and ATOM_SITE_U_ORTHO.
 ;
     _name.category_id             atom_site_occ_crenel
     _name.object_id               ortho_eps
@@ -6161,7 +6189,7 @@ save_ATOM_SITE_ROT_FOURIER
         expressed in two different ways: as movements around and
         along the crystallographic axes (R_x_1...R_z_2 and
         T_x_1...T_z_1) or through nine normal modes
-        (R_a1_1...R_y_2_nm) and T_a2_1...T_y_2_nm). The rotation
+        (R_a1_1...R_y_2_nm and T_a2_1...T_y_2_nm). The rotation
         R_y_2_nm and the translation T_y_2_nm are around and along
         the b-axis but are independent, in the sense that they do not
         belong to the same Fourier series, of T_y_1, T_y_2 and
@@ -6169,7 +6197,7 @@ save_ATOM_SITE_ROT_FOURIER
         transformation matrix.
 
         Example based on the article:
-        F.J. Z\'u\~niga, J.M. P\'erez-Mato and T. Breczewski(1993)
+        F.J. Z\'u\~niga, J.M. P\'erez-Mato and T. Breczewski (1993)
         Acta Cryst. B49, 1060-1068. doi:10.1107/S0108768193008195
         Structure of the Incommensurate Phase of 4,4'-Dichlorobiphenyl Sulfone
         at 90 K
@@ -6349,7 +6377,7 @@ save_ATOM_SITE_ROT_FOURIER_PARAM
       in the commensurate case (see _atom_sites_modulation.global_phase_t_).
 
       Rigid-group rotations should be expressed in degrees around either
-      the unit cell axes or of the axes defined  by the items belonging
+      the unit cell axes or of the axes defined by the items belonging
       to the ATOM_SITES_AXES category, through
       _atom_site_rot_Fourier.matrix_seq_id.
 
@@ -6567,7 +6595,7 @@ save_ATOM_SITE_ROT_FOURIER_PARAM
         expressed in two different ways: as movements around and
         along the crystallographic axes (R_x_1...R_z_2 and
         T_x_1...T_z_1) or through nine normal modes
-        (R_a1_1...R_y_2_nm) and T_a2_1...T_y_2_nm). The rotation
+        (R_a1_1...R_y_2_nm and T_a2_1...T_y_2_nm). The rotation
         R_y_2_nm and the translation T_y_2_nm are around and along
         the b-axis but are independent, in the sense that they do not
         belong to the same Fourier series, of T_y_1, T_y_2 and
@@ -6575,7 +6603,7 @@ save_ATOM_SITE_ROT_FOURIER_PARAM
         transformation matrix.
 
         Example based on the article:
-        F.J. Z\'u\~niga, J.M. P\'erez-Mato and T. Breczewski(1993)
+        F.J. Z\'u\~niga, J.M. P\'erez-Mato and T. Breczewski (1993)
         Acta Cryst. B49, 1060-1068. doi:10.1107/S0108768193008195
         Structure of the Incommensurate Phase of 4,4'-Dichlorobiphenyl Sulfone
         at 90 K
@@ -6990,7 +7018,7 @@ save_ATOM_SITE_ROT_ORTHO
       Data items in the ATOM_SITE_ROT_ORTHO category record
       details about the orthogonalized functions defined to solve
       correlation problems during the refinement of displacive
-      modulations when the the atomic domain of a given atom is
+      modulations when the atomic domain of a given atom is
       restricted by a crenel function. The functions are constructed
       selecting Fourier harmonics until the desired degree of
       orthogonality and completeness is reached (see
@@ -8042,7 +8070,7 @@ save_atom_site_u_fourier.tens_elem
     _description.text
 ;
       A label identifying the harmonic ADP tensor element U(ij) of a
-      given atom  whose modulation is being parameterized
+      given atom whose modulation is being parameterized
       by Fourier series.
 ;
     _name.category_id             atom_site_U_Fourier
@@ -8326,7 +8354,7 @@ save_atom_site_u_fourier_param.modulus
     _definition.update            2025-10-20
     _description.text
 ;
-      The the modulus [|U(ij)n|] of the complex amplitudes corresponding
+      The modulus [|U(ij)n|] of the complex amplitudes corresponding
       to the Fourier term defined by _atom_site_U_Fourier.atom_site_label,
       _atom_site_U_Fourier.tens_elem and
       _atom_site_U_Fourier.wave_vector_seq_id.
@@ -9141,7 +9169,7 @@ save_ATOM_SITES_AXES
     _description_example.detail
 ;
         Example based on the article:
-        F.J. Z\'u\~niga, J.M. P\'erez-Mato and T. Breczewski(1993)
+        F.J. Z\'u\~niga, J.M. P\'erez-Mato and T. Breczewski (1993)
         Acta Cryst. B49, 1060-1068. doi:10.1107/S0108768193008195
         Structure of the Incommensurate Phase of 4,4'-Dichlorobiphenyl Sulfone
         at 90 K
@@ -10372,7 +10400,7 @@ save_CELL_SUBSYSTEM
     _description_example.detail
 ;
     Example based on the article:
-    O. Gourdon, V. Petricek, M. Dusek, P. Bezdicka, S.  Durovic, D. Gyepesovad
+    O. Gourdon, V. Petricek, M. Dusek, P. Bezdicka, S. Durovic, D. Gyepesovad
     and M. Evain (1999)
     Acta Cryst. B55, 841-848. doi:10.1107/S0108768199006485
     Determination of the modulated structure of Sr~14/11~CoO~3~ through a
@@ -10570,7 +10598,7 @@ save_cell_subsystem.matrix_w
           m.matrix_W_12_5,m.matrix_W_12_6 ,m.matrix_W_12_7 ,m.matrix_W_12_8  ,\
           m.matrix_W_12_9,m.matrix_W_12_10,m.matrix_W_12_11,m.matrix_W_12_12] ]
 
-         #Matrix dimension is adjusted here here
+         #Matrix dimension is adjusted here
 
          _cell_subsystem.matrix_W =                                           \
          temp_subsystem.matrix_W[ 0:_cell.modulation_dimension + 2,           \
@@ -13479,7 +13507,7 @@ save_CELL_WAVE_VECTOR
     _definition.id                CELL_WAVE_VECTOR
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2026-06-30
+    _definition.update            2024-08-09
     _description.text
 ;
       Data items in the CELL_WAVE_VECTOR category list the
@@ -13488,17 +13516,10 @@ save_CELL_WAVE_VECTOR
       ha*+kb*+lc*+sum~i~ (m~i~q~i~). sum~i~ is taken
       over all wave vectors. In this version of the dictionary, the
       index i has been restricted to be less than 9.
-
-      _cell_wave_vector.structure_id may be omitted if only one
-      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               CELL_WAVE_VECTOR
-
-    loop_
-      _category_key.name
-         '_cell_wave_vector.seq_id'
-         '_cell_wave_vector.structure_id'
+    _category_key.name            '_cell_wave_vector.seq_id'
 
 save_
 
@@ -13755,7 +13776,7 @@ save_CELL_WAVE_VECTORS
     _definition.id                CELL_WAVE_VECTORS
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2026-06-30
+    _definition.update            2024-08-09
     _description.text
 ;
       Data items in the CELL_WAVE_VECTORS category record overall details
@@ -13767,25 +13788,6 @@ save_CELL_WAVE_VECTORS
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               CELL_WAVE_VECTORS
-    _category_key.name            '_cell_wave_vectors.id'
-
-save_
-
-save_cell_wave_vectors.id
-
-    _definition.id                '_cell_wave_vectors.id'
-    _definition.update            2026-06-30
-    _description.text
-;
-    Unique identifier for the overall details under which cell wave
-    vectors were measured.
-;
-    _name.category_id             cell_wave_vectors
-    _name.object_id               id
-    _type.purpose                 Key
-    _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Word
 
 save_
 
@@ -14764,7 +14766,7 @@ save_DIFFRN_STANDARD_REFLN
       measurement of diffraction intensities. Note that these are the
       individual standard reflections, not the results of the analysis
       of the standard reflections. Data items in this category are
-      extensions of  the core CIF dictionary definitions
+      extensions of the core CIF dictionary definitions
       to the indexing of standard reflections by
       higher-dimensional components.
 ;
@@ -15327,6 +15329,9 @@ save_GEOM_ANGLE
       in the way that they are calculated, even if the
       calculation method is not explicit in either this
       dictionary or the core.
+
+      _geom_angle.model_id may be omitted if only one _model.id
+      is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               GEOM_ANGLE
@@ -15660,6 +15665,9 @@ save_GEOM_BOND
       higher-dimensional superspace form and therefore
       redefines many datanames to reflect the changed
       method of distance calculation.
+
+      _geom_bond.model_id may be omitted if only one
+      _model.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               GEOM_BOND
@@ -15863,6 +15871,9 @@ save_GEOM_CONTACT
       the symmetry-operation code used in bond listings to the
       higher-dimensional superspace form and therefore redefines many
       datanames to reflect the changed method of distance calculation.
+
+      _geom_contact.model_id may be omitted if only one _model.id is
+      present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               GEOM_CONTACT
@@ -16028,6 +16039,9 @@ save_GEOM_HBOND
      to the higher-dimensional superspace form and therefore redefines many
      datanames to reflect the changed method of distance and angle
      calculation.
+
+     _geom_hbond.model_id may be omitted if only one _model.id is present
+     in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               GEOM_HBOND
@@ -16564,6 +16578,9 @@ save_GEOM_TORSION
      higher-dimensional superspace form and therefore redefines many
      datanames to reflect the changed method of distance and angle
      calculation.
+
+     _geom_torsion.model_id may be omitted if only one _model.id is
+     present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               GEOM_TORSION
@@ -17896,7 +17913,7 @@ save_superspace_group.name_it
       Crystallography, Vol. C (2006). Valid only for one-dimensional
       modulated structures. The symbol is divided into three parts:
       the Hermann-Mauguin space-group symbol of the reference
-      structure, the modulation wave vector  and the phase shift
+      structure, the modulation wave vector and the phase shift
       (or internal translation) associated with each component of
       the space group. Each component of the space-group name is
       separated by a space. Subscripts should appear without special
@@ -18037,7 +18054,7 @@ save_SUPERSPACE_GROUP_SYMOP
     _description_example.detail
 ;
     Example based on the article: O. Gourdon, V. Petricek, M. Dusek,
-    P. Bezdicka, S.  Durovic, D. Gyepesovad and M. Evain (1999) Acta
+    P. Bezdicka, S. Durovic, D. Gyepesovad and M. Evain (1999) Acta
     Cryst. B55, 841-848. doi:10.1107/S0108768199006485 Determination
     of the modulated structure of Sr~14/11~CoO~3~ through a (3 +
     1)-dimensional space description and using non-harmonic ADPs
@@ -18648,7 +18665,7 @@ save_
         Large rewording of _description.text of many items to avoid excesive
         verbosity.
 
-        Modified the definitions of GEOM_HBOND category, according the the core.
+        Modified the definitions of GEOM_HBOND category, according the core.
 
         2024-08-01:
         Deployment of the new save frames of templ_attr.cif.
@@ -18688,10 +18705,10 @@ save_
         Changed _type.purpose to Number (it was erroneusly assigned to Key) in
         the following items:
 
-        _atom_site_displace_Legendre.order', _atom_site_displace_xharm.order,
+        _atom_site_displace_Legendre.order, _atom_site_displace_xharm.order,
         _atom_site_occ_Legendre.order, _atom_site_occ_xharm.order,
         _atom_site_rot_Legendre.order, _atom_site_rot_xharm.order,
-        _atom_site_U_Legendre.order,_atom_site_U_xharm.order
+        _atom_site_U_Legendre.order, _atom_site_U_xharm.order
 
         2024-08-07
         Removed methods for _atom_site_displace_special_func.sawtooth,
@@ -18771,11 +18788,11 @@ save_
         Corrected the example of Sulfone. Also the examples of the items
         _atom_sites_modulation.global_phase_list and
         _cell.commen_supercell_matrix, have been moved to ATOM_SITES_MODULATION
-        and CELL, respectively. The problems is that the DDLm indicates that
+        and CELL, respectively. The problem is that the DDLm indicates that
         "example cases present values only, which inherit the enumeration range,
          enumeration set, container, dimension, content and purpose type
          constraints of the defining item." and those examples are text,
-         neither numbers or matrices.
+         neither numbers nor matrices.
 
         Replaced SPACE_GROUP and SPACE_GROUP_SYMOP categories by
             SUPERSPACE_GROUP and SUPERSPACE_GROUP_SYMOP.
@@ -18783,7 +18800,7 @@ save_
         Removed some restrictions in the definition of _superspace_group.name
 
         Functions (crenel, dsawtooth, dzigzag, rsawtooth and rzigzag) commented
-        and marked for deletion. They have not sense within the dictionary as
+        and marked for deletion. They have no sense within the dictionary as
         they require x4 as external variable.
 
         2025-06-22
@@ -18794,7 +18811,7 @@ save_
 
         Included the category EXPTL_CRYSTAL_FACE for merging with cif_core.dic.
 
-        Changed the _category_key.name  of DIFFRN_REFLN and REFLN to
+        Changed the _category_key.name of DIFFRN_REFLN and REFLN to
         _diffrn_refln.id and _refln.id, respectively.
 
         2026-06-15
@@ -18821,6 +18838,8 @@ save_
         Added _cell_wave_vector.structure_id as linked key.
         Added _cell_wave_vectors.id as Set key.
         Added _cell_wave_vector.vectors_id as linked, non key data name.
+
+        Added _atom_site_Fourier_wave_vector.structure_id as linked key.
 
         Improved deprecation of _atom_sites_displace_Fourier.axes_description
         and _atom_sites_rot_Fourier.axes_description.
