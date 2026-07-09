@@ -1276,9 +1276,11 @@ save_atom_site_anharmonic_adp_fourier_param.structure_id
         '_atom_site_anharmonic_ADP_Fourier_param.structure_id'
     _name.category_id             atom_site_anharmonic_ADP_Fourier_param
     _name.object_id               structure_id
+    _name.linked_item_id
+        '_atom_site_anharmonic_ADP_Fourier.structure_id'
 
     _import.get
-        [{'file':templ_attr.cif  'save':structure_id_key}]
+        [{'file':templ_attr.cif  'save':structure_id_key_no_linked}]
 
 save_
 
@@ -2637,9 +2639,10 @@ save_atom_site_displace_fourier_param.structure_id
         '_atom_site_displace_Fourier_param.structure_id'
     _name.category_id             atom_site_displace_Fourier_param
     _name.object_id               structure_id
+    _name.linked_item_id          '_atom_site_displace_Fourier.structure_id'
 
     _import.get
-        [{'file':templ_attr.cif  'save':structure_id_key}]
+        [{'file':templ_attr.cif  'save':structure_id_key_no_linked}]
 
 save_
 
@@ -5841,9 +5844,10 @@ save_atom_site_occ_fourier_param.structure_id
     _definition.id                '_atom_site_occ_Fourier_param.structure_id'
     _name.category_id             atom_site_occ_Fourier_param
     _name.object_id               structure_id
+    _name.linked_item_id          '_atom_site_occ_Fourier.structure_id'
 
     _import.get
-        [{'file':templ_attr.cif  'save':structure_id_key}]
+        [{'file':templ_attr.cif  'save':structure_id_key_no_linked}]
 
 save_
 
@@ -7247,9 +7251,10 @@ save_atom_site_rot_fourier_param.structure_id
     _definition.id                '_atom_site_rot_Fourier_param.structure_id'
     _name.category_id             atom_site_rot_Fourier_param
     _name.object_id               structure_id
+    _name.linked_item_id          '_atom_site_rot_Fourier.structure_id'
 
     _import.get
-        [{'file':templ_attr.cif  'save':structure_id_key}]
+        [{'file':templ_attr.cif  'save':structure_id_key_no_linked}]
 
 save_
 
@@ -9048,9 +9053,10 @@ save_atom_site_u_fourier_param.structure_id
     _definition.id                '_atom_site_U_Fourier_param.structure_id'
     _name.category_id             atom_site_U_Fourier_param
     _name.object_id               structure_id
+    _name.linked_item_id          '_atom_site_U_Fourier.structure_id'
 
     _import.get
-        [{'file':templ_attr.cif  'save':structure_id_key}]
+        [{'file':templ_attr.cif  'save':structure_id_key_no_linked}]
 
 save_
 
