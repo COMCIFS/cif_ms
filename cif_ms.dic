@@ -17032,7 +17032,7 @@ save_REFLN
     _definition.id                REFLN
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2025-06-22
+    _definition.update            2026-06-05
     _description.text
 ;
       Data items in the REFLN category record details about the
@@ -17044,10 +17044,17 @@ save_REFLN
       are extensions of the core CIF dictionary definitions to the
       indexing of reflections used in the refinement by
       higher-dimensional components.
+
+      _refln.structure_id may be omitted if only one _structure.id
+      is present in the same data block
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               REFLN
-    _category_key.name            '_refln.id'
+
+    loop_
+      _category_key.name
+         '_refln.id'
+         '_refln.structure_id'
 
 save_
 
@@ -18789,11 +18796,18 @@ save_
         Changed the _category_key.name of DIFFRN_REFLN and REFLN to
         _diffrn_refln.id and _refln.id, respectively.
 
+        2026-06-05
+
+        Add key _refln.structure_id to REFLN to keep in line with
+        CIF_CORE_MULTIBLOCK.
+
         2026-06-15
+
         Added key _superspace_group.id and linked key
         _superspace_group_symop.superspace_group_id
 
         Added linked non-key _structure.superspace_group_id
+
         2026-06-18
 
         Added _geom_*.model_id as linked key data name to GEOM_ANGLE, BOND,
