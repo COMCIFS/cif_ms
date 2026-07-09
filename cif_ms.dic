@@ -71,6 +71,9 @@ save_ATOM_SITE
     used in crystallographic structure studies.  Items in this
     dictionary enhance those in cif_core.cif to cover modulated
     structures.
+
+    _atom_site.structure_id may be omitted if only one _structure.id
+    is present in the same data block.
 ;
     _name.category_id             ATOM
     _name.object_id               ATOM_SITE
@@ -9130,7 +9133,7 @@ save_ATOM_SITES_AXES
     _definition.id                ATOM_SITES_AXES
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2024-08-09
+    _definition.update            2026-06-15
     _description.text
 ;
       Data items in the ATOM_SITES_AXES category record
@@ -9138,15 +9141,25 @@ save_ATOM_SITES_AXES
       displacements and rotations of atoms and rigid groups. Details
       for individual atom sites are described by data items in
       the ATOM_SITE_DISPLACE_ and ATOM_SITE_ROT_ categories.
+
+      _atom_sites_axes.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITES_AXES
-    _category_key.name            '_atom_sites_axes.matrix_seq_id'
+
+    loop_
+      _category_key.name
+         '_atom_sites_axes.matrix_seq_id'
+         '_atom_sites_axes.structure_id'
+
     _description_example.case
 ;
         #\#CIF_2.0
 
         # - - - - data truncated for brevity - - - -
+
+        _structure.id   "4,4'-Dichlorobiphenyl Sulfone"
 
         loop_
          _atom_sites_axes.matrix_seq_id
@@ -9222,6 +9235,17 @@ save_atom_sites_axes.matrix_seq_id
     _type.contents                Integer
     _enumeration.range            1:
     _units.code                   none
+
+save_
+
+save_atom_sites_axes.structure_id
+
+    _definition.id                '_atom_sites_axes.structure_id'
+    _name.category_id             atom_sites_axes
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
@@ -9313,19 +9337,25 @@ save_ATOM_SITES_MODULATION
     _definition.id                ATOM_SITES_MODULATION
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2025-06-04
+    _definition.update            2026-06-15
     _description.text
 ;
       Data items in the ATOM_SITES_MODULATION category record details
       common to the modulation of atom sites in a modulated structure.
+
+      _atom_sites_modulation.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITES_MODULATION
+    _category_key.name            '_atom_sites_modulation.structure_id'
     _description_example.case
 ;
         #\#CIF_2.0
 
         # - - - - data truncated for brevity - - - -
+
+        _structure.id   Fe(NCS)~2~
 
         _cell.modulation_dimension               1
 
@@ -9690,6 +9720,17 @@ save_atom_sites_modulation.global_phase_t_9
 
 save_
 
+save_atom_sites_modulation.structure_id
+
+    _definition.id                '_atom_sites_modulation.structure_id'
+    _name.category_id             atom_sites_modulation
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
+
+save_
+
 save_ATOM_SITES_ORTHO
 
     _definition.id                ATOM_SITES_ORTHO
@@ -9707,6 +9748,9 @@ save_ATOM_SITES_ORTHO
       The functions are constructed selecting Fourier harmonics
       until a desired degree of orthogonality and completeness is
       reached (see _atom_site_occ_crenel.ortho_eps).
+
+      _atom_sites_ortho.structure_id may be omitted if only one
+      _structure.id is present in the same data block.
 
       References: Petricek, V., Van Der Lee & Evain, M. (1995).
                   Acta Cryst. A51, 529-535. DOI 10.1107/S0108767395000365
@@ -9726,12 +9770,19 @@ save_ATOM_SITES_ORTHO
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               ATOM_SITES_ORTHO
-    _category_key.name            '_atom_sites_ortho.func_id'
+
+    loop_
+      _category_key.name
+         '_atom_sites_ortho.func_id'
+         '_atom_sites_ortho.structure_id'
+
     _description_example.case
 ;
     #\#CIF_2.0
 
     # - - - - data truncated for brevity - - - -
+
+    _structure.id   "\d~1~-CoZn~7.8~"
 
     _cell.modulation_dimension               1
 
@@ -9852,6 +9903,17 @@ save_atom_sites_ortho.func_id
     _type.source                  Related
     _type.container               Single
     _type.contents                Code
+
+save_
+
+save_atom_sites_ortho.structure_id
+
+    _definition.id                '_atom_sites_ortho.structure_id'
+    _name.category_id             atom_sites_ortho
+    _name.object_id               structure_id
+
+    _import.get
+        [{'file':templ_attr.cif  'save':structure_id_key}]
 
 save_
 
