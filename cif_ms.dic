@@ -13519,7 +13519,11 @@ save_CELL_WAVE_VECTOR
 ;
     _name.category_id             CIF_MS_HEAD
     _name.object_id               CELL_WAVE_VECTOR
-    _category_key.name            '_cell_wave_vector.seq_id'
+
+    loop_
+      _category_key.name
+         '_cell_wave_vector.seq_id'
+         '_cell_wave_vector.structure_id'
 
 save_
 
