@@ -1896,6 +1896,8 @@ save_ATOM_SITE_DISPLACE_FOURIER
 
         # - - - - data truncated for brevity - - - -
 
+        _cell.modulation_dimension               2
+
         loop_
          _cell_wave_vector.seq_id
          _cell_wave_vector.xyz
@@ -2174,6 +2176,8 @@ save_ATOM_SITE_DISPLACE_FOURIER_PARAM
         data_I
 
         # - - - - data truncated for brevity - - - -
+
+        _cell.modulation_dimension               2
 
         loop_
          _cell_wave_vector.seq_id
