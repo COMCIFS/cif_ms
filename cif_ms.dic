@@ -25,7 +25,7 @@ data_CIF_MS
     _dictionary.formalism         Modulated
     _dictionary.class             Instance
     _dictionary.version           3.2.5
-    _dictionary.date              2026-06-30
+    _dictionary.date              2026-07-28
     _dictionary.uri               http://www.iucr.org/cif/dic/cif_ms.dic
     _dictionary.ddl_conformance   4.2.0
     _dictionary.licensing_SPDX    CC-BY-4.0
@@ -4541,7 +4541,7 @@ save_
 save_atom_site_fourier_wave_vector.q_coeff
 
     _definition.id                '_atom_site_Fourier_wave_vector.q_coeff'
-    _definition.update            2025-10-28
+    _definition.update            2026-07-28
     _description.text
 ;
       The list of coefficients that express a given k as a linear combination
@@ -4556,20 +4556,13 @@ save_atom_site_fourier_wave_vector.q_coeff
     _type.purpose                 Number
     _type.source                  Derived
     _type.container               Matrix
+    _type.dimension               '[]'
     _type.contents                Integer
     _enumeration.default          [0]
     _units.code                   none
 
-    loop_
-      _method.purpose
-      _method.expression
-         Definition
-;
-         With c as cell
-
-          _type.dimension = '[c.modulation_dimension]'
-;
-         Evaluation
+    _method.purpose               Evaluation
+    _method.expression
 ;
          With m as atom_site_Fourier_wave_vector
 
@@ -4591,7 +4584,7 @@ save_atom_site_fourier_wave_vector.q_coeff_seq_id
 
     _definition.id
         '_atom_site_Fourier_wave_vector.q_coeff_seq_id'
-    _definition.update            2025-10-28
+    _definition.update            2026-07-28
     _description.text
 ;
       The list of numeric codes that identifies each independent wave vector
@@ -4607,20 +4600,13 @@ save_atom_site_fourier_wave_vector.q_coeff_seq_id
     _type.purpose                 Number
     _type.source                  Derived
     _type.container               Matrix
+    _type.dimension               '[]'
     _type.contents                Integer
     _enumeration.default          [1]
     _units.code                   none
 
-    loop_
-      _method.purpose
-      _method.expression
-         Definition
-;
-         With c as cell
-
-         _type.dimension = '[c.modulation_dimension]'
-;
-         Evaluation
+    _method.purpose               Evaluation
+    _method.expression
 ;
          With m as atom_site_Fourier_wave_vector
 
@@ -18716,7 +18702,7 @@ save_
         2024-12-12
         Technical fixes (JRH)
 ;
-         3.2.5                    2026-06-30
+         3.2.5                    2026-07-28
 ;
         _SPECIAL_FUNC categories, replaced by:
         _DISPLACE_SAWTOOTH
@@ -18826,4 +18812,10 @@ save_
 
         Changed the lower enumeration range of _atom_sites_axes.matrix_seq_id
         from 0 to 1.
+
+        2026-07-28
+
+        Relaxed dimension requirements for the
+        _atom_site_fourier_wave_vector.q_coeff_seq_id and
+        _atom_site_fourier_wave_vector.q_coeff data items.
 ;
