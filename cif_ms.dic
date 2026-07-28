@@ -3215,6 +3215,8 @@ save_ATOM_SITE_DISPLACE_SAWTOOTH
        structures.
 ;
 ;
+       #\#CIF_2.0
+
        # Same example using vectors
 
        # - - - - data truncated for brevity - - - -
